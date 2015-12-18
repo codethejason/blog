@@ -31,7 +31,7 @@ canonifyurls = true
 
 &lt;h5 id=&#34;step-2-setup-git-to-work:4f462177fbb182d324a56341526983da&#34;&gt;Step 2: Setup Git to Work&lt;/h5&gt;
 
-&lt;p&gt;I borrowed this part from the official Hugo site. It is extremely comprehensive and not much more can be added. Make sure to perform these commands in order in Git Bash or Git Shell.&lt;/p&gt;
+&lt;p&gt;I borrowed this part from the official Hugo site. It is extremely comprehensive and not much more can be added. Make sure to perform these commands in order in &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;Git Bash&lt;/a&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# Create a new orphand branch (no commit history) named gh-pages
 git checkout --orphan gh-pages
@@ -56,13 +56,13 @@ git checkout master
 rm -rf public
 
 # Add the gh-pages branch of the repository. It will look like a folder named public
-git subtree add --prefix=public git@github.com:[github username]/blog.git gh-pages --squash
+git subtree add --prefix=public https://github.com/[github username]/blog.git gh-pages --squash
 
 # Pull down the file we just committed. This helps avoid merge conflicts
-git subtree pull --prefix=public git@github.com:[github username]/blog.git gh-pages
+git subtree pull --prefix=public https://github.com/[github username]/blog.git gh-pages
 
-# Run hugo. Generated site will be placed in public directory (or omit -t ThemeName if you&#39;re not using a theme)
-hugo -t ThemeName
+# Run hugo. Generated site will be placed in public directory
+hugo
 
 
 # Add everything
@@ -72,14 +72,14 @@ git add -A
 git commit -m &amp;quot;Updating site&amp;quot; &amp;amp;&amp;amp; git push origin master
 
 # Push the public subtree to the gh-pages branch
-git subtree push --prefix=public git@github.com:[github username]/blog.git gh-pages
+git subtree push --prefix=public https://github.com/[github username]/blog.git gh-pages
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Be sure to be signed in to avoid any authentication problems.&lt;/p&gt;
 
 &lt;h5 id=&#34;step-3-create-deploy-sh-file:4f462177fbb182d324a56341526983da&#34;&gt;Step 3: Create deploy.sh file&lt;/h5&gt;
 
-&lt;p&gt;This deploy.sh file will make deploying blog posts a lot easier in the future. Since Windows does not support shell scripts, we must run the script in &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;Git Bash&lt;/a&gt;. The usage of this script is &lt;code&gt;bash deploy.sh &amp;quot;&amp;lt;my commit msg&amp;gt;&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This deploy.sh file will make deploying blog posts a lot easier in the future. Since Windows does not support shell scripts, we must run the script in Git Bash. The usage of this script is &lt;code&gt;bash deploy.sh &amp;quot;&amp;lt;my commit msg&amp;gt;&amp;quot;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;#!/bin/bash
 
@@ -100,7 +100,7 @@ git commit -m &amp;quot;$msg&amp;quot;
 
 # Push source and build repos.
 git push origin master
-git subtree push --prefix=public git@github.com:[github username]/blog.git gh-pages
+git subtree push --prefix=public https://github.com/[github username]/blog.git gh-pages
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;That&amp;rsquo;s it! Enjoy your new blog that&amp;rsquo;s secure and easy to use.&lt;/p&gt;
