@@ -2,3 +2,9 @@ baseURL ="http://codethejason.github.io/blog"
 languageCode = "en-us"
 title = "Jason's Google Code-in Blog"
 theme = "material-design"
+contentdir: "content"
+layoutdir: "layouts"
+publishdir: "public"
+indexes:
+  category: "categories"
+canonifyurls: true
