@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/</link>
+    <description>Recent content on Jason&#39;s Google Code-in Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Dec 2015 22:26:09 -0500</lastBuildDate>
+    <atom:link href="http://codethejason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setup a Blog using Hugo on Windows</title>
+      <link>http://codethejason.github.io/blog/post/welcome/</link>
+      <pubDate>Wed, 16 Dec 2015 22:26:09 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/post/welcome/</guid>
+      <description>
+
+&lt;p&gt;Today, I created a blog with the Hugo static website generator, an engine very similar to Jekyll. Hugo allows a user to easily setup a secure and customizable blog in a short period of time. It is open source and constantly updated to ensure the latest features and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;Setting up Hugo is a piece of cake, even on Windows. First, I recommend watch the &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;quickstart guide&lt;/a&gt;. It is extremely informative and got me setup in less than ten minutes.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-1-install-hugo:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Step 1: Install Hugo&lt;/h5&gt;
+
+&lt;p&gt;To install Hugo and access it from the command prompt, first scroll down to the bottom of the &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;releases&lt;/a&gt; and download the appropriate executable. After unzipping the file, rename the file name to &lt;strong&gt;hugo.exe&lt;/strong&gt;. Navigate to your &lt;em&gt;AppData\Roaming&lt;/em&gt; (access it by typing in &lt;em&gt;%appdata%&lt;/em&gt; in the &lt;em&gt;Windows + R&lt;/em&gt; dialog) in Windows Explorer and create a new folder called &lt;strong&gt;hugo&lt;/strong&gt;, and copy the binary inside the folder. In the run dialog, type in &lt;code&gt;rundll32 sysdm.cpl,EditEnvironmentVariables&lt;/code&gt; to access the system variables. Under the user variables, edit the variable that says &lt;em&gt;PATH&lt;/em&gt; by appending a semicolon and the location of the hugo folder in appdata. After saving, you are now ready to run hugo on the command line.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-2-configure-hugo:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Step 2: Configure Hugo&lt;/h5&gt;
+
+&lt;p&gt;Create a folder in a location of your choice. Type in the following commands in order:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd C:\&amp;lt;Your file location&amp;gt;
+mkdir hugo
+cd hugo
+hugo new site
+hugo new firstpost.md
+git clone --depth 1 --recursive https://github.com/pdevty/material-design themes/material-design
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to install other themes, feel free to &lt;a href=&#34;https://github.com/spf13/hugoThemes&#34;&gt;check them out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Edit the &lt;em&gt;config.toml&lt;/em&gt; file to say this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;baseURL =&amp;quot;Your URL&amp;quot;
+languageCode = &amp;quot;en-us&amp;quot;
+title = &amp;quot;Your Name&#39;s Blog&amp;quot;
+theme = &amp;quot;material-design&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;step-3-run-hugo:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Step 3: Run Hugo&lt;/h6&gt;
+
+&lt;p&gt;Now, you can add any content below the plus signs to your new markdown file located at &lt;em&gt;content/posts/firstpost.md&lt;/em&gt; in your favorite text editor. The formatting is markdown, which you can read about on &lt;a href=&#34;https://help.github.com/articles/markdown-basics/&#34;&gt;Github&lt;/a&gt;. Remove the &lt;code&gt;draft = true&lt;/code&gt; statement on top of the page and run &lt;code&gt;hugo server&lt;/code&gt; to generate your content. Your content will be available on &lt;strong&gt;localhost:1313&lt;/strong&gt; in your browser.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/lYxNn/a7dbbbe8c3.jpg&#34; width=&#34;300&#34; alt=&#34;Final Result&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
