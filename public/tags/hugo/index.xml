@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jason&#39;s Google Code-in Blog</title>
-    <link>http://codethejason.github.io/blog/</link>
-    <description>Recent content on Jason&#39;s Google Code-in Blog</description>
+    <title>Hugo on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/tags/hugo/</link>
+    <description>Recent content in Hugo on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 Dec 2015 23:12:09 -0500</lastBuildDate>
-    <atom:link href="http://codethejason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://codethejason.github.io/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Setup Hugo on Github Pages</title>

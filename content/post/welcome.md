@@ -1,7 +1,8 @@
 +++
 date = "2015-12-16T22:26:09-05:00"
 title = "Setup a Blog using Hugo on Windows"
-
+Categories = ['hugo']
+Tags = ['setup', 'installation', 'windows', 'hugo', 'github']
 +++
 
 Today, I created a blog with the Hugo static website generator, an engine very similar to Jekyll. Hugo allows a user to easily setup a secure and customizable blog in a short period of time. It is open source and constantly updated to ensure the latest features and bug fixes.  
