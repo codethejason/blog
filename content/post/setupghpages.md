@@ -19,7 +19,7 @@ canonifyurls = true
 ```
 
 ##### Step 2: Setup Git to Work
-I borrowed this part from the official Hugo site. It is extremely comprehensive and not much more can be added. Make sure to perform these commands in order in Git Bash or Git Shell.
+I borrowed this part from the official Hugo site. It is extremely comprehensive and not much more can be added. Make sure to perform these commands in order in [Git Bash](https://git-scm.com/downloads).
 ```
 # Create a new orphand branch (no commit history) named gh-pages
 git checkout --orphan gh-pages
@@ -44,13 +44,13 @@ git checkout master
 rm -rf public
 
 # Add the gh-pages branch of the repository. It will look like a folder named public
-git subtree add --prefix=public git@github.com:[github username]/blog.git gh-pages --squash
+git subtree add --prefix=public https://github.com/[github username]/blog.git gh-pages --squash
 
 # Pull down the file we just committed. This helps avoid merge conflicts
-git subtree pull --prefix=public git@github.com:[github username]/blog.git gh-pages
+git subtree pull --prefix=public https://github.com/[github username]/blog.git gh-pages
 
-# Run hugo. Generated site will be placed in public directory (or omit -t ThemeName if you're not using a theme)
-hugo -t ThemeName
+# Run hugo. Generated site will be placed in public directory
+hugo
 
 
 # Add everything
@@ -60,13 +60,13 @@ git add -A
 git commit -m "Updating site" && git push origin master
 
 # Push the public subtree to the gh-pages branch
-git subtree push --prefix=public git@github.com:[github username]/blog.git gh-pages
+git subtree push --prefix=public https://github.com/[github username]/blog.git gh-pages
 ```
 
 Be sure to be signed in to avoid any authentication problems.
 
 ##### Step 3: Create deploy.sh file
-This deploy.sh file will make deploying blog posts a lot easier in the future. Since Windows does not support shell scripts, we must run the script in [Git Bash](https://git-scm.com/downloads). The usage of this script is `bash deploy.sh "<my commit msg>"`.
+This deploy.sh file will make deploying blog posts a lot easier in the future. Since Windows does not support shell scripts, we must run the script in Git Bash. The usage of this script is `bash deploy.sh "<my commit msg>"`.
 
 ```
 #!/bin/bash
@@ -88,7 +88,7 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin master
-git subtree push --prefix=public git@github.com:[github username]/blog.git gh-pages
+git subtree push --prefix=public https://github.com/[github username]/blog.git gh-pages
 ```
 
 That's it! Enjoy your new blog that's secure and easy to use.
