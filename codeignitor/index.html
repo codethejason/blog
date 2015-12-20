@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Developing a Register and Login System with Codeigniter</title>
+  <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://codethejason.github.io/blog/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://codethejason.github.io/blog"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Jason&#39;s Google Code-in Blog</h1>
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+        <div class="row center">
+        
+        
+        
+        
+        
+          <a href="http://codethejason.github.io/blog/index.xml"><img src="http://codethejason.github.io/blog/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://codethejason.github.io/blog/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Developing a Register and Login System with Codeigniter</h4>
+          <p>
+          
+            
+              <a href="http://codethejason.github.io/blog/categories/other-gci-projects/">other gci projects</a>
+            
+           
+          </p>
+          <p>
+
+<p><a href="https://www.codeigniter.com/">Codeigniter</a> is a MVC PHP application framework designed to make developing a web application easier and faster. It has a large and active <a href="http://forum.codeigniter.com/">community base</a> with a pretty good amount of <a href="http://www.codeigniter.com/user_guide/">documentation</a>. For me, this was my first PHP framework I used. I have always thought using frameworks like Codeigniter or Laravel is bad, but I may have to change my mindset after actually using one. The time it took me from start to end in developing this application is shorter than the time it would take to develop a &lsquo;vanilla&rsquo; PHP application even though this is my first time using Codeigniter. You may see my final app on my <a href="http://192.111.152.115:17210">temporary site</a>.</p>
+
+<h3 id="making-the-login-register-application:fc652abd1263e2709a3eda71713fadcd">Making the Login/Register Application</h3>
+
+<p>I will go over the general gist of what I did. You can see the full code on my <a href="https://github.com/codethejason/usersystem">repository</a>. I basically made a simple login and register system with validation. Once a user registers, he or she can login. After logging in, the user may see an array of all the registered users. He or she then may log out and can login after that. It&rsquo;s a very basic application, but what is important for this task is understanding the basics of Codeigniter.</p>
+
+<h4 id="first-the-basic-configuration:fc652abd1263e2709a3eda71713fadcd">First the Basic Configuration</h4>
+
+<p>After downloading Codeigniter 3.0 from <a href="https://www.codeigniter.com/download">here</a>, I set up the directory and apache2.conf on my server (I am  using LAMPP). I pasted this code into the <Directory /var/> in apache to configure mod_rewrite settings for manipulating the URL:</p>
+
+<pre><code>#Source: https://gist.github.com/philipptempel/4226750
+&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  # !IMPORTANT! Set your RewriteBase here and don't forget trailing and leading
+  #  slashes.
+  # If your page resides at
+  #  http://www.example.com/mypage/test1
+  # then use
+  # RewriteBase /mypage/test1/
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+&lt;/IfModule&gt;
+</code></pre>
+
+<p>I went into the <em>applications/config</em> folder to modify the database, autoload, and config files according to my needs. I then created a new controller in <em>controllers/</em> named main and set it as default in <em>config/routes.php</em>.</p>
+
+<h4 id="making-the-login-and-register-portion:fc652abd1263e2709a3eda71713fadcd">Making the Login and Register Portion</h4>
+
+<p>I then proceeded to create the login method in my <em>Main.php</em> and made a login_validation method that took advantage of the form_validation library to check that all the requirements are met (i.e. all fields required, user filled out email, etc. ). I created a view for the login form.</p>
+
+<p>Then, I created the register portion, which was basically the exact same as the login except for a confirm password field, a db insert method, and additional validation.</p>
+
+<h4 id="finishing-the-application:fc652abd1263e2709a3eda71713fadcd">Finishing the Application</h4>
+
+<p>Finally, I was almost done with the application after about five consecutive hours (the Model_users model was a headache to deal with). I made some final changes including printing out the results array from the db-&gt;get() query.</p>
+
+<p>It was an interesting experience using a PHP framework for the same time. Sure it took some time to learn, but I think it was well worth as it eased my animosity towards frameworks. Everything just felt so simple &ndash; no creating a validation class, no creating a configuration manager, fewer worries about security, and more. I will most definitely consider using some sort of PHP framework for my next application.</p>
+</p>
+          <p>19 Dec 2015
+            
+              
+                <a href="http://codethejason.github.io/blog/tags/codeigniter/">#Codeigniter</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/php/">#PHP</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/mvc/">#MVC</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/framework/">#framework</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/mysql/">#MySQL</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/apache/">#Apache</a>
+              
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/setupghpages/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/materialize.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  </body>
+</html>
+
