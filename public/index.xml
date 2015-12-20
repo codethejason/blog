@@ -6,8 +6,58 @@
     <description>Recent content on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Dec 2015 23:12:09 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 19 Dec 2015 23:19:50 -0500</lastBuildDate>
     <atom:link href="http://codethejason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Developing a Register and Login System with Codeigniter</title>
+      <link>http://codethejason.github.io/blog/codeignitor/</link>
+      <pubDate>Sat, 19 Dec 2015 23:19:50 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/codeignitor/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.codeigniter.com/&#34;&gt;Codeigniter&lt;/a&gt; is a MVC PHP application framework designed to make developing a web application easier and faster. It has a large and active &lt;a href=&#34;http://forum.codeigniter.com/&#34;&gt;community base&lt;/a&gt; with a pretty good amount of &lt;a href=&#34;http://www.codeigniter.com/user_guide/&#34;&gt;documentation&lt;/a&gt;. For me, this was my first PHP framework I used. I have always thought using frameworks like Codeigniter or Laravel is bad, but I may have to change my mindset after actually using one. The time it took me from start to end in developing this application is shorter than the time it would take to develop a &amp;lsquo;vanilla&amp;rsquo; PHP application even though this is my first time using Codeigniter. You may see my final app on my &lt;a href=&#34;http://192.111.152.115:17210&#34;&gt;temporary site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;making-the-login-register-application:fc652abd1263e2709a3eda71713fadcd&#34;&gt;Making the Login/Register Application&lt;/h3&gt;
+
+&lt;p&gt;I will go over the general gist of what I did. You can see the full code on my &lt;a href=&#34;https://github.com/codethejason/usersystem&#34;&gt;repository&lt;/a&gt;. I basically made a simple login and register system with validation. Once a user registers, he or she can login. After logging in, the user may see an array of all the registered users. He or she then may log out and can login after that. It&amp;rsquo;s a very basic application, but what is important for this task is understanding the basics of Codeigniter.&lt;/p&gt;
+
+&lt;h4 id=&#34;first-the-basic-configuration:fc652abd1263e2709a3eda71713fadcd&#34;&gt;First the Basic Configuration&lt;/h4&gt;
+
+&lt;p&gt;After downloading Codeigniter 3.0 from &lt;a href=&#34;https://www.codeigniter.com/download&#34;&gt;here&lt;/a&gt;, I set up the directory and apache2.conf on my server (I am  using LAMPP). I pasted this code into the &lt;Directory /var/&gt; in apache to configure mod_rewrite settings for manipulating the URL:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#Source: https://gist.github.com/philipptempel/4226750
+&amp;lt;IfModule mod_rewrite.c&amp;gt;
+  RewriteEngine On
+  # !IMPORTANT! Set your RewriteBase here and don&#39;t forget trailing and leading
+  #  slashes.
+  # If your page resides at
+  #  http://www.example.com/mypage/test1
+  # then use
+  # RewriteBase /mypage/test1/
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+&amp;lt;/IfModule&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I went into the &lt;em&gt;applications/config&lt;/em&gt; folder to modify the database, autoload, and config files according to my needs. I then created a new controller in &lt;em&gt;controllers/&lt;/em&gt; named main and set it as default in &lt;em&gt;config/routes.php&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;making-the-login-and-register-portion:fc652abd1263e2709a3eda71713fadcd&#34;&gt;Making the Login and Register Portion&lt;/h4&gt;
+
+&lt;p&gt;I then proceeded to create the login method in my &lt;em&gt;Main.php&lt;/em&gt; and made a login_validation method that took advantage of the form_validation library to check that all the requirements are met (i.e. all fields required, user filled out email, etc. ). I created a view for the login form.&lt;/p&gt;
+
+&lt;p&gt;Then, I created the register portion, which was basically the exact same as the login except for a confirm password field, a db insert method, and additional validation.&lt;/p&gt;
+
+&lt;h4 id=&#34;finishing-the-application:fc652abd1263e2709a3eda71713fadcd&#34;&gt;Finishing the Application&lt;/h4&gt;
+
+&lt;p&gt;Finally, I was almost done with the application after about five consecutive hours (the Model_users model was a headache to deal with). I made some final changes including printing out the results array from the db-&amp;gt;get() query.&lt;/p&gt;
+
+&lt;p&gt;It was an interesting experience using a PHP framework for the same time. Sure it took some time to learn, but I think it was well worth as it eased my animosity towards frameworks. Everything just felt so simple &amp;ndash; no creating a validation class, no creating a configuration manager, fewer worries about security, and more. I will most definitely consider using some sort of PHP framework for my next application.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Setup Hugo on Github Pages</title>
