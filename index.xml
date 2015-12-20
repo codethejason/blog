@@ -6,8 +6,26 @@
     <description>Recent content on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Dec 2015 23:19:50 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 20 Dec 2015 17:17:02 -0500</lastBuildDate>
     <atom:link href="http://codethejason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bug Fixes for GCI Student Site</title>
+      <link>http://codethejason.github.io/blog/sitebugfixes/</link>
+      <pubDate>Sun, 20 Dec 2015 17:17:02 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/sitebugfixes/</guid>
+      <description>&lt;p&gt;Yesterday, I made two pull requests. My &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/83&#34;&gt;first pull request&lt;/a&gt; fixed the issue of the icons being scattered all over the place. The icons were originally off centered from the avatar circle and off center from each other. I created a flexbox grid that automtically centered the social media icons to the center of the avatar circle. Then, I set a definte size for the a element and centered each icon vertically and horizontally inside the corresponding link elements.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/m2Ri8/804ddfb4e3.jpg&#34; alt=&#34;icons&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/97&#34;&gt;second pull request&lt;/a&gt; aligned the Google Plus iframe so that it would stay in the center instead of being pushed to the left. It was a simple &lt;code&gt;text-align: center;&lt;/code&gt; fix.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/m2R03/efa23baa1a.jpg&#34; alt=&#34;google plus&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also added my own profile picture and information in &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/125&#34;&gt;pull request #125&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Developing a Register and Login System with Codeigniter</title>
