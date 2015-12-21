@@ -6,7 +6,7 @@ title = "Bug Fixes for GCI Student Site"
 
 +++
 
-Yesterday, I made two pull requests. My [first pull request](https://github.com/fossasia/gci15.fossasia.org/pull/83) fixed the issue of the icons being scattered all over the place. The icons were originally off centered from the avatar circle and off center from each other. I created a flexbox grid that automtically centered the social media icons to the center of the avatar circle. Then, I set a definte size for the a element and centered each icon vertically and horizontally inside the corresponding link elements.  
+Yesterday, I made two pull requests for [FOSSASIA](https://codein.withgoogle.com/organizations/fossasia/). My [first pull request](https://github.com/fossasia/gci15.fossasia.org/pull/83) fixed the issue of the icons being scattered all over the place. The icons were originally off centered from the avatar circle and off center from each other. I created a flexbox grid that automtically centered the social media icons to the center of the avatar circle. Then, I set a definte size for the a element and centered each icon vertically and horizontally inside the corresponding link elements.  
 
 ![icons](http://puu.sh/m2Ri8/804ddfb4e3.jpg)
 
