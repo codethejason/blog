@@ -15,7 +15,7 @@
       <pubDate>Sun, 20 Dec 2015 17:17:02 -0500</pubDate>
       
       <guid>http://codethejason.github.io/blog/sitebugfixes/</guid>
-      <description>&lt;p&gt;Yesterday, I made two pull requests. My &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/83&#34;&gt;first pull request&lt;/a&gt; fixed the issue of the icons being scattered all over the place. The icons were originally off centered from the avatar circle and off center from each other. I created a flexbox grid that automtically centered the social media icons to the center of the avatar circle. Then, I set a definte size for the a element and centered each icon vertically and horizontally inside the corresponding link elements.&lt;/p&gt;
+      <description>&lt;p&gt;Yesterday, I made two pull requests for &lt;a href=&#34;https://codein.withgoogle.com/organizations/fossasia/&#34;&gt;FOSSASIA&lt;/a&gt;. My &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/83&#34;&gt;first pull request&lt;/a&gt; fixed the issue of the icons being scattered all over the place. The icons were originally off centered from the avatar circle and off center from each other. I created a flexbox grid that automtically centered the social media icons to the center of the avatar circle. Then, I set a definte size for the a element and centered each icon vertically and horizontally inside the corresponding link elements.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://puu.sh/m2Ri8/804ddfb4e3.jpg&#34; alt=&#34;icons&#34; /&gt;&lt;/p&gt;
 
