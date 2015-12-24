@@ -6,8 +6,68 @@
     <description>Recent content in Setup on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Dec 2015 23:12:09 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 23 Dec 2015 19:18:08 -0500</lastBuildDate>
     <atom:link href="http://codethejason.github.io/blog/tags/setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setup FOSSASIA&#39;s Orga Server</title>
+      <link>http://codethejason.github.io/blog/setuporgaserver/</link>
+      <pubDate>Wed, 23 Dec 2015 19:18:08 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/setuporgaserver/</guid>
+      <description>
+
+&lt;p&gt;Today, I will be teaching you how to locally setup the &lt;a href=&#34;https://github.com/fossasia/open-event-orga-server&#34;&gt;open event orga server&lt;/a&gt; which manages all the data of an event. I will let you know the exact process I went through.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-1-fork-and-clone-the-repository:05b9736d8424bfbd20ee3035f5b847da&#34;&gt;Step 1: Fork and clone the repository&lt;/h5&gt;
+
+&lt;p&gt;Make sure you clone the repository from &lt;a href=&#34;https://github.com/fossasia/open-event-orga-server&#34;&gt;Github&lt;/a&gt; into your default folder. You should also fork the repository if you are thinking of contributing to it. At first I tried to install Vagrant by myself and clone the repository later, but cloning the repository first is much easier since there is a preset vagrant file.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;blogimages/clonerepo.png&#34; alt=&#34;clone repository&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;step-2-install-vagrant-and-virtualbox:05b9736d8424bfbd20ee3035f5b847da&#34;&gt;Step 2: Install Vagrant and VirtualBox&lt;/h5&gt;
+
+&lt;p&gt;At this point, go to &lt;a href=&#34;http://vagrantup.com&#34;&gt;Vagrant&lt;/a&gt; and install the latest version. Afterwards, navigate to &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;VirtualBox&lt;/a&gt; to install VirtualBox 5 for Windows. Restart your computer after the installation.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-3-set-up-box-and-connect-to-it:05b9736d8424bfbd20ee3035f5b847da&#34;&gt;Step 3: Set up Box and connect to it&lt;/h5&gt;
+
+&lt;p&gt;Go to your command prompt and type in &lt;code&gt;vagrant up&lt;/code&gt; to initialize the setup process. The default operating system is Ubuntu 14.04 LTS. You should see this after running the command:&lt;br /&gt;
+&lt;img src=&#34;blogimages/vagrantup.png&#34; alt=&#34;clone repository&#34; /&gt;
+After waiting three to ten minutes, your virtual machine will be ready. Go into an ssh client (for example &lt;a href=&#34;http://www.putty.org/&#34;&gt;PuTTy&lt;/a&gt;) and login to the server using the following credentials:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;host: localhost or 127.0.0.1
+port: 2222
+username: vagrant
+password: vagrant
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Navigate to &lt;em&gt;/vagrant&lt;/em&gt; by typing in &lt;code&gt;cd /vagrant&lt;/code&gt;. You should see something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;blogimages/consolewindow.png&#34; alt=&#34;window&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;step-4-install-open-orga-server:05b9736d8424bfbd20ee3035f5b847da&#34;&gt;Step 4: Install Open Orga Server&lt;/h5&gt;
+
+&lt;p&gt;To avoid confusion, exit out of any command prompts. At any point, if you want to shut down the VM, type &lt;code&gt;vagrant halt&lt;/code&gt; in the open orga server directory.&lt;br /&gt;
+Now, create the python database given in the &lt;em&gt;create_db.py&lt;/em&gt; file and start the Nginx server by running these commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python create_db.py
+python manage.py runserver -h 0.0.0.0 -p 5000
+#Address is 0.0.0.0 so the app binds to the public ips on the box (for accessing it on our machine)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You are done! View the web application at &lt;a href=&#34;localhost:8001&#34;&gt;localhost:8001&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;blogimages/finished.png&#34; alt=&#34;window&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;troubleshooting:05b9736d8424bfbd20ee3035f5b847da&#34;&gt;Troubleshooting&lt;/h3&gt;
+
+&lt;p&gt;I went through a few issues to get the server up and running. For example, I was stuck on this screen for a while:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;blogimages/stuck.png&#34; alt=&#34;stuck&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To fix it, you must restart your computer and boot into BIOS (usually by function keys or a special power button on the computer). Afterwards, select virtualization and enable it.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Setup Hugo on Github Pages</title>

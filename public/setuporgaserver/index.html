@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Setup FOSSASIA&#39;s Orga Server</title>
+  <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://codethejason.github.io/blog/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://codethejason.github.io/blog"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Jason&#39;s Google Code-in Blog</h1>
+          <h2 style="color: #fff; font-size: 20px; text-align:center;">GCI Organization: <a href="http://fossasia.org/">FOSSASIA</a></h2>
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+        <div class="row center">
+        
+        
+        
+        
+        
+          <a href="http://codethejason.github.io/blog/index.xml"><img src="http://codethejason.github.io/blog/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://codethejason.github.io/blog/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Setup FOSSASIA&#39;s Orga Server</h4>
+          <p>
+          
+            
+              <a href="http://codethejason.github.io/blog/categories/open-event/">open-event</a>
+            
+           
+          </p>
+          <p>
+
+<p>Today, I will be teaching you how to locally setup the <a href="https://github.com/fossasia/open-event-orga-server">open event orga server</a> which manages all the data of an event. I will let you know the exact process I went through.</p>
+
+<h5 id="step-1-fork-and-clone-the-repository:05b9736d8424bfbd20ee3035f5b847da">Step 1: Fork and clone the repository</h5>
+
+<p>Make sure you clone the repository from <a href="https://github.com/fossasia/open-event-orga-server">Github</a> into your default folder. You should also fork the repository if you are thinking of contributing to it. At first I tried to install Vagrant by myself and clone the repository later, but cloning the repository first is much easier since there is a preset vagrant file.</p>
+
+<p><img src="blogimages/clonerepo.png" alt="clone repository" /></p>
+
+<h5 id="step-2-install-vagrant-and-virtualbox:05b9736d8424bfbd20ee3035f5b847da">Step 2: Install Vagrant and VirtualBox</h5>
+
+<p>At this point, go to <a href="http://vagrantup.com">Vagrant</a> and install the latest version. Afterwards, navigate to <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> to install VirtualBox 5 for Windows. Restart your computer after the installation.</p>
+
+<h5 id="step-3-set-up-box-and-connect-to-it:05b9736d8424bfbd20ee3035f5b847da">Step 3: Set up Box and connect to it</h5>
+
+<p>Go to your command prompt and type in <code>vagrant up</code> to initialize the setup process. The default operating system is Ubuntu 14.04 LTS. You should see this after running the command:<br />
+<img src="blogimages/vagrantup.png" alt="clone repository" />
+After waiting three to ten minutes, your virtual machine will be ready. Go into an ssh client (for example <a href="http://www.putty.org/">PuTTy</a>) and login to the server using the following credentials:</p>
+
+<pre><code>host: localhost or 127.0.0.1
+port: 2222
+username: vagrant
+password: vagrant
+</code></pre>
+
+<p>Navigate to <em>/vagrant</em> by typing in <code>cd /vagrant</code>. You should see something like this:</p>
+
+<p><img src="blogimages/consolewindow.png" alt="window" /></p>
+
+<h5 id="step-4-install-open-orga-server:05b9736d8424bfbd20ee3035f5b847da">Step 4: Install Open Orga Server</h5>
+
+<p>To avoid confusion, exit out of any command prompts. At any point, if you want to shut down the VM, type <code>vagrant halt</code> in the open orga server directory.<br />
+Now, create the python database given in the <em>create_db.py</em> file and start the Nginx server by running these commands:</p>
+
+<pre><code>python create_db.py
+python manage.py runserver -h 0.0.0.0 -p 5000
+#Address is 0.0.0.0 so the app binds to the public ips on the box (for accessing it on our machine)
+</code></pre>
+
+<p>You are done! View the web application at <a href="localhost:8001">localhost:8001</a>.</p>
+
+<p><img src="blogimages/finished.png" alt="window" /></p>
+
+<h3 id="troubleshooting:05b9736d8424bfbd20ee3035f5b847da">Troubleshooting</h3>
+
+<p>I went through a few issues to get the server up and running. For example, I was stuck on this screen for a while:</p>
+
+<p><img src="blogimages/stuck.png" alt="stuck" /></p>
+
+<p>To fix it, you must restart your computer and boot into BIOS (usually by function keys or a special power button on the computer). Afterwards, select virtualization and enable it.</p>
+</p>
+          <p>23 Dec 2015
+            
+              
+                <a href="http://codethejason.github.io/blog/tags/orga-server/">#orga-server</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/github/">#github</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/setup/">#setup</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/virtual-machine/">#virtual machine</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/windows/">#windows</a>
+              
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/sitebugfixes/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/materialize.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  </body>
+</html>
+
