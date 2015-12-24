@@ -68,9 +68,9 @@
 
 <h5 id="step-1-fork-and-clone-the-repository:05b9736d8424bfbd20ee3035f5b847da">Step 1: Fork and clone the repository</h5>
 
-<p>Make sure you clone the repository from <a href="https://github.com/fossasia/open-event-orga-server">Github</a> into your default folder. You should also fork the repository if you are thinking of contributing to it. At first I tried to install Vagrant by myself and clone the repository later, but cloning the repository first is much easier since there is a preset vagrant file.</p>
+<p>Make sure you clone the repository from <a href="https://github.com/fossasia/open-event-orga-server">Github</a> into your default folder. You should also fork the repository if you are thinking of contributing to it. Cloning the repository first is much easier since there is a preset <em>Vagrantfile</em>.</p>
 
-<p><img src="blogimages/clonerepo.png" alt="clone repository" /></p>
+<p><img src="../setuporgaimages/clonerepo.png" alt="clone repository" /></p>
 
 <h5 id="step-2-install-vagrant-and-virtualbox:05b9736d8424bfbd20ee3035f5b847da">Step 2: Install Vagrant and VirtualBox</h5>
 
@@ -78,9 +78,11 @@
 
 <h5 id="step-3-set-up-box-and-connect-to-it:05b9736d8424bfbd20ee3035f5b847da">Step 3: Set up Box and connect to it</h5>
 
-<p>Go to your command prompt and type in <code>vagrant up</code> to initialize the setup process. The default operating system is Ubuntu 14.04 LTS. You should see this after running the command:<br />
-<img src="blogimages/vagrantup.png" alt="clone repository" />
-After waiting three to ten minutes, your virtual machine will be ready. Go into an ssh client (for example <a href="http://www.putty.org/">PuTTy</a>) and login to the server using the following credentials:</p>
+<p>Go to your command prompt and type in <code>vagrant up</code> in the open event orga directory to initialize the setup process. The default operating system is Ubuntu Trusty LTS (you can use another OS if you would like). Nevertheless, you should see this after running the <code>vagrant up</code> command:</p>
+
+<p><img src="../setuporgaimages/vagrantup.png" alt="clone repository" /></p>
+
+<p>After waiting three to ten minutes, your virtual machine will be ready. Go into an ssh client (for example <a href="http://www.putty.org/">PuTTy</a>) and login to the server using the following credentials:</p>
 
 <pre><code>host: localhost or 127.0.0.1
 port: 2222
@@ -90,7 +92,7 @@ password: vagrant
 
 <p>Navigate to <em>/vagrant</em> by typing in <code>cd /vagrant</code>. You should see something like this:</p>
 
-<p><img src="blogimages/consolewindow.png" alt="window" /></p>
+<p><img src="../setuporgaimages/consolewindow.png" alt="window" /></p>
 
 <h5 id="step-4-install-open-orga-server:05b9736d8424bfbd20ee3035f5b847da">Step 4: Install Open Orga Server</h5>
 
@@ -102,17 +104,19 @@ python manage.py runserver -h 0.0.0.0 -p 5000
 #Address is 0.0.0.0 so the app binds to the public ips on the box (for accessing it on our machine)
 </code></pre>
 
-<p>You are done! View the web application at <a href="localhost:8001">localhost:8001</a>.</p>
+<p>You are done! View the web application at <a href="localhost:8001">localhost:8001</a> on your desktop. If you would like to keep the app running, you can install screen and use it to keep it in the background even while you are not on the VM.</p>
 
-<p><img src="blogimages/finished.png" alt="window" /></p>
+<p><img src="../setuporgaimages/finished.png" alt="window" /></p>
 
 <h3 id="troubleshooting:05b9736d8424bfbd20ee3035f5b847da">Troubleshooting</h3>
 
-<p>I went through a few issues to get the server up and running. For example, I was stuck on this screen for a while:</p>
+<p>One issue I had was that I was stuck on this screen for a while:</p>
 
-<p><img src="blogimages/stuck.png" alt="stuck" /></p>
+<p><img src="../setuporgaimages/stuck.png" alt="stuck" /></p>
 
 <p>To fix it, you must restart your computer and boot into BIOS (usually by function keys or a special power button on the computer). Afterwards, select virtualization and enable it.</p>
+
+<p>Other than that, I did not have any issues deploying the application. Be sure to have the latest versions of Vagrant and Virtualbox and you will be able to finish installing the server successfully. Good luck on your installation and have a blast contributing!</p>
 </p>
           <p>23 Dec 2015
             
