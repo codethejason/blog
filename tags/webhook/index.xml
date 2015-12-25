@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fossasia Site on Jason&#39;s Google Code-in Blog</title>
-    <link>http://codethejason.github.io/blog/categories/fossasia-site/</link>
-    <description>Recent content in Fossasia Site on Jason&#39;s Google Code-in Blog</description>
+    <title>Webhook on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/tags/webhook/</link>
+    <description>Recent content in Webhook on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Dec 2015 00:25:35 -0500</lastBuildDate>
-    <atom:link href="http://codethejason.github.io/blog/categories/fossasia-site/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://codethejason.github.io/blog/tags/webhook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Setting Up a Webhook for Github</title>
@@ -51,24 +51,6 @@
 &lt;p&gt;You can now test your webhook by creating a pull request on your fork.&lt;/p&gt;
 
 &lt;p&gt;Sign into another account and make a file change in the &lt;em&gt;gh-pages&lt;/em&gt; branch and make a pull request. Test that the bot now posts the link to the live website.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Bug Fixes for GCI Student Site</title>
-      <link>http://codethejason.github.io/blog/sitebugfixes/</link>
-      <pubDate>Sun, 20 Dec 2015 17:17:02 -0500</pubDate>
-      
-      <guid>http://codethejason.github.io/blog/sitebugfixes/</guid>
-      <description>&lt;p&gt;Yesterday, I made two pull requests for &lt;a href=&#34;https://codein.withgoogle.com/organizations/fossasia/&#34;&gt;FOSSASIA&lt;/a&gt;. My &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/83&#34;&gt;first pull request&lt;/a&gt; fixed the issue of the icons being scattered all over the place. The icons were originally off centered from the avatar circle and off center from each other. I created a flexbox grid that automtically centered the social media icons to the center of the avatar circle. Then, I set a definte size for the a element and centered each icon vertically and horizontally inside the corresponding link elements.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://puu.sh/m2Ri8/804ddfb4e3.jpg&#34; alt=&#34;icons&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;My &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/97&#34;&gt;second pull request&lt;/a&gt; aligned the Google Plus iframe so that it would stay in the center instead of being pushed to the left. It was a simple &lt;code&gt;text-align: center;&lt;/code&gt; fix.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://puu.sh/m2R03/efa23baa1a.jpg&#34; alt=&#34;google plus&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I also added my own profile picture and information in &lt;a href=&#34;https://github.com/fossasia/gci15.fossasia.org/pull/125&#34;&gt;pull request #125&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

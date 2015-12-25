@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Setting Up a Webhook for Github</title>
+  <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://codethejason.github.io/blog/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://codethejason.github.io/blog"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Jason&#39;s Google Code-in Blog</h1>
+          <h2 style="color: #fff; font-size: 20px; text-align:center;">GCI Organization: <a href="http://fossasia.org/">FOSSASIA</a></h2>
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+        <div class="row center">
+        
+        
+        
+        
+        
+          <a href="http://codethejason.github.io/blog/index.xml"><img src="http://codethejason.github.io/blog/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://codethejason.github.io/blog/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Setting Up a Webhook for Github</h4>
+          <p>
+          
+            
+              <a href="http://codethejason.github.io/blog/categories/fossasia-site/">fossasia site</a>
+            
+           
+          </p>
+          <p>
+
+<p>You can set up a webhook for so that each time a contributor opens or reopens a pull request on your repository/fork, a bot may comment a live version of the contributor&rsquo;s site on the pull request.</p>
+
+<h5 id="add-webhook:95424174b467660d9d29374c13638004">Add webhook</h5>
+
+<p>First, you must add a webhook to your repository. To do this:</p>
+
+<p>1) Go to your repository settings and select <em>Webhooks &amp; Services</em>.<br />
+2) Click <em>add webhook</em>. You can make up a random payload URL for now. Your secret key can be anything (be sure to record this).<br />
+3) Click <em>let me select individual events</em> and only check the <em>pull request</em> checkbox.<br />
+4) Create the webhook.</p>
+
+<p>You should see something like this afterwards (with a random link):</p>
+
+<p><img src="http://puu.sh/m7QnB/804187cbaf.png" alt="example" /></p>
+
+<h5 id="setting-up-your-bot:95424174b467660d9d29374c13638004">Setting up your bot</h5>
+
+<p>You must first create a new github account to host the bot (or you can use your own account if you want it to act as the bot).  Go to your <a href="https://github.com/settings/tokens">settings</a> to create a new personal access token. Leave it on the default permissions.</p>
+
+<p>1) Clone <a href="https://github.com/codethejason/fossasiaprbot">https://github.com/codethejason/fossasiaprbot</a> to a public area on your server. Something like <code>http://example.com/fossasiaprbot/webhook.php</code> will be your webhook URL, so please edit that in the repository settings.<br />
+2) On your server, install php and php5-curl.<br />
+3) Create a <code>secret.json</code> in the cloned directory file like the following:</p>
+
+<pre><code>{
+  &quot;githubkey&quot;: &quot;your secret key you recorded in part 1&quot;,
+  &quot;token&quot;: &quot;your secret access token&quot;
+}
+</code></pre>
+
+<h5 id="testing-the-webhook:95424174b467660d9d29374c13638004">Testing the webhook</h5>
+
+<p>You can now test your webhook by creating a pull request on your fork.</p>
+
+<p>Sign into another account and make a file change in the <em>gh-pages</em> branch and make a pull request. Test that the bot now posts the link to the live website.</p>
+</p>
+          <p>25 Dec 2015
+            
+              
+                <a href="http://codethejason.github.io/blog/tags/setup/">#setup</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/webhook/">#webhook</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/gh-pages/">#gh-pages</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/server/">#server</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/github/">#github</a>
+              
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/setuporgaserver/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/materialize.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  </body>
+</html>
+
