@@ -6,8 +6,53 @@
     <description>Recent content on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Dec 2015 19:18:08 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 25 Dec 2015 00:25:35 -0500</lastBuildDate>
     <atom:link href="http://codethejason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setting Up a Webhook for Github</title>
+      <link>http://codethejason.github.io/blog/webhook/</link>
+      <pubDate>Fri, 25 Dec 2015 00:25:35 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/webhook/</guid>
+      <description>
+
+&lt;p&gt;You can set up a webhook for so that each time a contributor opens or reopens a pull request on your repository/fork, a bot may comment a live version of the contributor&amp;rsquo;s site on the pull request.&lt;/p&gt;
+
+&lt;h5 id=&#34;add-webhook:95424174b467660d9d29374c13638004&#34;&gt;Add webhook&lt;/h5&gt;
+
+&lt;p&gt;First, you must add a webhook to your repository. To do this:&lt;/p&gt;
+
+&lt;p&gt;1) Go to your repository settings and select &lt;em&gt;Webhooks &amp;amp; Services&lt;/em&gt;.&lt;br /&gt;
+2) Click &lt;em&gt;add webhook&lt;/em&gt;. You can make up a random payload URL for now. Your secret key can be anything (be sure to record this).&lt;br /&gt;
+3) Click &lt;em&gt;let me select individual events&lt;/em&gt; and only check the &lt;em&gt;pull request&lt;/em&gt; checkbox.&lt;br /&gt;
+4) Create the webhook.&lt;/p&gt;
+
+&lt;p&gt;You should see something like this afterwards (with a random link):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/m7QnB/804187cbaf.png&#34; alt=&#34;example&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;setting-up-your-bot:95424174b467660d9d29374c13638004&#34;&gt;Setting up your bot&lt;/h5&gt;
+
+&lt;p&gt;You must first create a new github account to host the bot (or you can use your own account if you want it to act as the bot).  Go to your &lt;a href=&#34;https://github.com/settings/tokens&#34;&gt;settings&lt;/a&gt; to create a new personal access token. Leave it on the default permissions.&lt;/p&gt;
+
+&lt;p&gt;1) Clone &lt;a href=&#34;https://github.com/codethejason/fossasiaprbot&#34;&gt;https://github.com/codethejason/fossasiaprbot&lt;/a&gt; to a public area on your server. Something like &lt;code&gt;http://example.com/fossasiaprbot/webhook.php&lt;/code&gt; will be your webhook URL, so please edit that in the repository settings.&lt;br /&gt;
+2) On your server, install php and php5-curl.&lt;br /&gt;
+3) Create a &lt;code&gt;secret.json&lt;/code&gt; in the cloned directory file like the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;githubkey&amp;quot;: &amp;quot;your secret key you recorded in part 1&amp;quot;,
+  &amp;quot;token&amp;quot;: &amp;quot;your secret access token&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;testing-the-webhook:95424174b467660d9d29374c13638004&#34;&gt;Testing the webhook&lt;/h5&gt;
+
+&lt;p&gt;You can now test your webhook by creating a pull request on your fork.&lt;/p&gt;
+
+&lt;p&gt;Sign into another account and make a file change in the &lt;em&gt;gh-pages&lt;/em&gt; branch and make a pull request. Test that the bot now posts the link to the live website.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Setup FOSSASIA&#39;s Orga Server</title>
