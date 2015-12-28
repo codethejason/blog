@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Commit</title>
+  <title>Setup Angular User App with Github Pages</title>
   <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
@@ -47,89 +47,77 @@
   </div>
 
 
+
 <div class="container">
   <div class="section">
 
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Setup Angular User App with Github Pages</h4>
+          <p>
+          
+            
+              <a href="http://codethejason.github.io/blog/categories/miscellaneous/">miscellaneous</a>
+            
+           
+          </p>
+          <p><p>Today, our task is to setup <a href="https://github.com/aidarbek/angular">https://github.com/aidarbek/angular</a> so that it runs with Github Pages. Luckily, AngularJS is easy to setup for Github Pages, so this task only takes a few steps.</p>
 
-<div class="row">
+<p><strong>First</strong>, fork the repository and save it to your account.</p>
 
-  
-  <div class="col m4 s12">
-    <div class="card-panel">
-      <h4><a href="http://codethejason.github.io/blog/setupangularapp/">Setup Angular User App with Github Pages</a></h4>
-      <p>
-      
-        
-          <a href="http://codethejason.github.io/blog/categories/miscellaneous/">miscellaneous</a>
-        
-       
-      </p>
-      <p>Today, our task is to setup https://github.com/aidarbek/angular so that it runs with Github Pages. Luckily, AngularJS is easy to setup for Github Pages, so this task only takes a few steps. First, fork the repository and save it to your account. Next, clone the fork you just created by typing this command in Git Shell: git clone https://github.com/&lt;your github username&gt;/angular.git Then, make a branch called github pages and switch to it.</p>
-      <p>
-      28 Dec 2015
-      
-        
-          <a href="http://codethejason.github.io/blog/tags/setup/">#setup</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/commit/">#commit</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/gh-pages/">#gh-pages</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/github/">#github</a>
-        
-       
-      </p>
+<p><strong>Next</strong>, clone the fork you just created by typing this command in Git Shell:</p>
+
+<pre><code>git clone https://github.com/&lt;your github username&gt;/angular.git
+</code></pre>
+
+<p><strong>Then</strong>, make a branch called github pages and switch to it.</p>
+
+<pre><code>cd angular/
+git branch gh-pages
+git checkout gh-pages
+</code></pre>
+
+<p><strong>Last but not least</strong>, push the new branch to Github by setting a new upstream.</p>
+
+<pre><code>git push --set-upstream origin gh-pages
+</code></pre>
+
+<p>You&rsquo;re done! You can see your result at <code>http://&lt;your github username&gt;.github.io/angular</code>.</p>
+
+<p><img src="http://puu.sh/mbviC/6ef77603cf.png" alt="result" /></p>
+</p>
+          <p>28 Dec 2015
+            
+              
+                <a href="http://codethejason.github.io/blog/tags/setup/">#setup</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/commit/">#commit</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/gh-pages/">#gh-pages</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/github/">#github</a>
+              
+            
+          </p>
+          
+        </div>
+      </div>
     </div>
-  </div>
 
-  
-  <div class="col m4 s12">
-    <div class="card-panel">
-      <h4><a href="http://codethejason.github.io/blog/setupghpages/">Setup Hugo on Github Pages</a></h4>
-      <p>
+    <div class="row">
+      <div class="col s3 m1">
       
-        
-          <a href="http://codethejason.github.io/blog/categories/hugo/">hugo</a>
-        
-       
-      </p>
-      <p>At this point, you might be wondering how users can easily see your blog content without downloading the repository and doing all the steps you had to take to view your posts. This is done by publishing on Github Pages, a free service offered by Github that hosts static webpages. We can create a static website by publishing all our posts. I will be using lots of content from the Hugo site, so this tutorial is very similar.</p>
-      <p>
-      17 Dec 2015
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
       
-        
-          <a href="http://codethejason.github.io/blog/tags/setup/">#setup</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/commit/">#commit</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/gh-pages/">#gh-pages</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/hugo/">#hugo</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/github/">#github</a>
-        
-       
-      </p>
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/webhook/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
     </div>
-  </div>
-
-</div>
-
-
-<div class="row">
-  <div class="col s3 m1">
-  
-    <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
-  
-  </div>
-  <div class="col s6 m10 center">&nbsp</div>
-  <div class="col s3 m1">
-  
-    <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-forward"></i></a>
-  
-  </div>
-</div>
-
 
   </div>
 </div>
@@ -151,3 +139,4 @@
 
   </body>
 </html>
+

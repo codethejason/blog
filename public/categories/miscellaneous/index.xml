@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscellaneous on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/categories/miscellaneous/</link>
+    <description>Recent content in Miscellaneous on Jason&#39;s Google Code-in Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Dec 2015 12:38:47 -0500</lastBuildDate>
+    <atom:link href="http://codethejason.github.io/blog/categories/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setup Angular User App with Github Pages</title>
+      <link>http://codethejason.github.io/blog/setupangularapp/</link>
+      <pubDate>Mon, 28 Dec 2015 12:38:47 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/setupangularapp/</guid>
+      <description>&lt;p&gt;Today, our task is to setup &lt;a href=&#34;https://github.com/aidarbek/angular&#34;&gt;https://github.com/aidarbek/angular&lt;/a&gt; so that it runs with Github Pages. Luckily, AngularJS is easy to setup for Github Pages, so this task only takes a few steps.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;First&lt;/strong&gt;, fork the repository and save it to your account.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Next&lt;/strong&gt;, clone the fork you just created by typing this command in Git Shell:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/&amp;lt;your github username&amp;gt;/angular.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Then&lt;/strong&gt;, make a branch called github pages and switch to it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd angular/
+git branch gh-pages
+git checkout gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Last but not least&lt;/strong&gt;, push the new branch to Github by setting a new upstream.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push --set-upstream origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;rsquo;re done! You can see your result at &lt;code&gt;http://&amp;lt;your github username&amp;gt;.github.io/angular&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/mbviC/6ef77603cf.png&#34; alt=&#34;result&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
