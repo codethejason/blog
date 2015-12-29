@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>User Management on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/tags/user-management/</link>
+    <description>Recent content in User Management on Jason&#39;s Google Code-in Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Dec 2015 10:02:57 -0500</lastBuildDate>
+    <atom:link href="http://codethejason.github.io/blog/tags/user-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Extend a User Management Application in Pharo</title>
+      <link>http://codethejason.github.io/blog/pharousermanagement/</link>
+      <pubDate>Tue, 29 Dec 2015 10:02:57 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/pharousermanagement/</guid>
+      <description>&lt;p&gt;My task was to extend an address book located on this blog: &lt;a href=&#34;http://magaloma.blogspot.de/2011/01/pharo-gui-with-polymorph.html&#34;&gt;http://magaloma.blogspot.de/2011/01/pharo-gui-with-polymorph.html&lt;/a&gt;. It featured adding, editing, and deleting a contact and only had two fields: first name and last name. I extended the applicatino by adding an email field after loading the program in Pharo 4.0.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Gofer it
+ squeaksource: &#39;Pharocasts&#39;;
+ package: &#39;ContactManager&#39;;
+ load.
+ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;First&lt;/strong&gt;, in the contact class, I added an instance variable called email. After that, I could add methods in the &lt;em&gt;accessing&lt;/em&gt; protocol that returns the email and also add the email to be printed in the printOn method in the &lt;em&gt;printing&lt;/em&gt; protocol. Last, I amended &lt;code&gt;ContactListEditor&amp;gt;&amp;gt;#contacts&lt;/code&gt; to include actually printing out the email address.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/mcywp/bea6834b21.png&#34; alt=&#34;email&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Smalltalk is a reflective language and was designed for constructionist learning, a method designed to reconstruct a learner&amp;rsquo;s knowledge rather to transmit new knowledge. In my short experience using Pharo Smalltalk, I found it quite different primarily due to the enivironment it is being run in but also due to the syntax. I never coded in any language that needed to be run in its own image and found it to be quite odd. Pharo smalltalk&amp;rsquo;s syntax also seems very different from the syntax I am used to seeing. I hope to continue doing smalltalk tasks for Google Code-in and explore smalltalk further even after GCI.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
