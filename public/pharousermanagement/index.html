@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Miscellaneous</title>
+  <title>Extend a User Management Application in Pharo</title>
   <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
@@ -47,60 +47,67 @@
   </div>
 
 
+
 <div class="container">
   <div class="section">
 
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Extend a User Management Application in Pharo</h4>
+          <p>
+          
+            
+              <a href="http://codethejason.github.io/blog/categories/smalltalk/">smalltalk</a>
+            
+           
+          </p>
+          <p><p>My task was to extend an address book located on this blog: <a href="http://magaloma.blogspot.de/2011/01/pharo-gui-with-polymorph.html">http://magaloma.blogspot.de/2011/01/pharo-gui-with-polymorph.html</a>. It featured adding, editing, and deleting a contact and only had two fields: first name and last name. I extended the applicatino by adding an email field after loading the program in Pharo 4.0.</p>
 
-<div class="row">
+<pre><code>Gofer it
+ squeaksource: 'Pharocasts';
+ package: 'ContactManager';
+ load.
+ 
+</code></pre>
 
-  
-  <div class="col m4 s12">
-    <div class="card-panel">
-      <h4><a href="http://codethejason.github.io/blog/setupangularapp/">Setup Angular User App with Github Pages</a></h4>
-      <p>
-      
-        
-          <a href="http://codethejason.github.io/blog/categories/miscellaneous/">miscellaneous</a>
-        
-       
-      </p>
-      <p>Today, our task is to setup https://github.com/aidarbek/angular so that it runs with Github Pages. Luckily, AngularJS is easy to setup for Github Pages, so this task only takes a few steps. First, fork the repository and save it to your account. Next, clone the fork you just created by typing this command in Git Shell: git clone https://github.com/&lt;your github username&gt;/angular.git Then, make a branch called github pages and switch to it.</p>
-      <p>
-      28 Dec 2015
-      
-        
-          <a href="http://codethejason.github.io/blog/tags/setup/">#setup</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/commit/">#commit</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/gh-pages/">#gh-pages</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/github/">#github</a>
-        
-          <a href="http://codethejason.github.io/blog/tags/angularjs/">#angularjs</a>
-        
-       
-      </p>
+<p><strong>First</strong>, in the contact class, I added an instance variable called email. After that, I could add methods in the <em>accessing</em> protocol that returns the email and also add the email to be printed in the printOn method in the <em>printing</em> protocol. Last, I amended <code>ContactListEditor&gt;&gt;#contacts</code> to include actually printing out the email address.</p>
+
+<p><img src="http://puu.sh/mcywp/bea6834b21.png" alt="email" /></p>
+
+<p>Smalltalk is a reflective language and was designed for constructionist learning, a method designed to reconstruct a learner&rsquo;s knowledge rather to transmit new knowledge. In my short experience using Pharo Smalltalk, I found it quite different primarily due to the enivironment it is being run in but also due to the syntax. I never coded in any language that needed to be run in its own image and found it to be quite odd. Pharo smalltalk&rsquo;s syntax also seems very different from the syntax I am used to seeing. I hope to continue doing smalltalk tasks for Google Code-in and explore smalltalk further even after GCI.</p>
+</p>
+          <p>29 Dec 2015
+            
+              
+                <a href="http://codethejason.github.io/blog/tags/pharo/">#pharo</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/smalltalk/">#smalltalk</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/user-management/">#user management</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/image/">#image</a>
+              
+            
+          </p>
+          
+        </div>
+      </div>
     </div>
-  </div>
 
-</div>
-
-
-<div class="row">
-  <div class="col s3 m1">
-  
-    <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
-  
-  </div>
-  <div class="col s6 m10 center">&nbsp</div>
-  <div class="col s3 m1">
-  
-    <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-forward"></i></a>
-  
-  </div>
-</div>
-
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/setupangularapp/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
 
   </div>
 </div>
@@ -122,3 +129,4 @@
 
   </body>
 </html>
+

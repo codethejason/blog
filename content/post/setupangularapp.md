@@ -1,6 +1,6 @@
 +++
 Categories = ['miscellaneous']
-Tags = ['setup', 'commit', 'gh-pages', 'github']
+Tags = ['setup', 'commit', 'gh-pages', 'github', 'angularjs']
 date = "2015-12-28T12:38:47-05:00"
 title = "Setup Angular User App with Github Pages"
 
