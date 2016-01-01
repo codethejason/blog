@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Extend a User Management Application in Pharo</title>
+  <title>Exploring Docker</title>
   <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
@@ -54,39 +54,34 @@
     <div class="row">
       <div class="col s12">
         <div class="card-panel">
-          <h4>Extend a User Management Application in Pharo</h4>
+          <h4>Exploring Docker</h4>
           <p>
           
             
-              <a href="http://codethejason.github.io/blog/categories/smalltalk/">smalltalk</a>
+              <a href="http://codethejason.github.io/blog/categories/miscellaneous/">miscellaneous</a>
             
            
           </p>
-          <p><p>My task was to extend an address book located on this blog: <a href="http://magaloma.blogspot.de/2011/01/pharo-gui-with-polymorph.html">http://magaloma.blogspot.de/2011/01/pharo-gui-with-polymorph.html</a>. It featured adding, editing, and deleting a contact and only had two fields: first name and last name. I extended the applicatino by adding an email field after loading the program in Pharo 4.0.</p>
+          <p><p>I have always seen Docker being talked about in the Linux community and have seen it as one of the DigitalOcean quick app install options. I had no idea what it was and did not realize it&rsquo;s function. <a href="https://www.docker.com/what-docker">Docker</a> is actually a container technology designed to improve efficiency. Traditional virtual machines house their own guest operating system and libraries to run an application. As one can see, if there is a large number of virtual machines running their own operating system, the workflow is inefficient. Docker combines the operating systems and other shared parts, so a low spec server could be running hundreds of containers without a hitch. Docker also makes collaboration and publishing easier since it creates a common framework for people to work together and scales easily.</p>
 
-<pre><code>Gofer it
- squeaksource: 'Pharocasts';
- package: 'ContactManager';
- load.
- 
-</code></pre>
+<p>Docker has a few tools in its Toolbox to help with development. <a href="https://www.docker.com/docker-compose">Docker Compose</a> is a tool used for running small parts of application on different containers while treating it as a single application. There is no need to manage each and every separate container. <a href="https://docs.docker.com/machine/">Docker Machine</a> makes host creation easier by automatically configuring Docker on the hosts. <a href="https://www.docker.com/docker-swarm">Docker Swarm</a> is exactly what it sounds like; it provides clustering capabilities to manage a whole swarm of Docker Engines in a since Docker Engine.</p>
 
-<p><strong>First</strong>, in the contact class, I added an instance variable called email. After that, I could add methods in the <em>accessing</em> protocol that returns the email and also add the email to be printed in the printOn method in the <em>printing</em> protocol. Last, I amended <code>ContactListEditor&gt;&gt;#contacts</code> to include actually printing out the email address.</p>
+<p>I found <a href="https://docs.docker.com/engine/installation/">installation</a> to be a little bit frustrating because I could not get Docker to work on one of my Windows computers. When I tried to ask for help, there was virtually nobody active on the IRC. I proceeded to install Docker on another computer without a problem. I made a 3rd tier application (talks to database) that connects to MySQL <a href="https://github.com/codethejason/gcismallprojects2015/tree/master/simpleDockerApp">here</a> and ran it on a Docker container.</p>
 
-<p><img src="http://puu.sh/mcywp/bea6834b21.png" alt="email" /></p>
+<p>By the way, Happy New Year!</p>
 
-<p>Smalltalk is a reflective language and was designed for constructionist learning, a method designed to reconstruct a learner&rsquo;s knowledge rather to transmit new knowledge. In my short experience using Pharo Smalltalk, I found it quite different primarily due to the enivironment it is being run in but also due to the syntax. I never coded in any language that needed to be run in its own image and found it to be quite odd. Pharo smalltalk&rsquo;s syntax also seems very different from the syntax I am used to seeing. I hope to continue doing smalltalk tasks for Google Code-in and explore smalltalk further even after GCI.</p>
+<p><img src="http://4.bp.blogspot.com/-dZ7-CqEkHhU/VJ6dGmIHCHI/AAAAAAAAH28/eYAWdPY_XM0/w350/Happy-New-Year.png" alt="hny" /></p>
 </p>
-          <p>29 Dec 2015
+          <p>1 Jan 2016
             
               
-                <a href="http://codethejason.github.io/blog/tags/pharo/">#pharo</a>
+                <a href="http://codethejason.github.io/blog/tags/docker/">#docker</a>
               
-                <a href="http://codethejason.github.io/blog/tags/smalltalk/">#smalltalk</a>
+                <a href="http://codethejason.github.io/blog/tags/virtual-machine/">#virtual machine</a>
               
-                <a href="http://codethejason.github.io/blog/tags/user-management/">#user management</a>
+                <a href="http://codethejason.github.io/blog/tags/linux/">#linux</a>
               
-                <a href="http://codethejason.github.io/blog/tags/image/">#image</a>
+                <a href="http://codethejason.github.io/blog/tags/containers/">#containers</a>
               
             
           </p>
@@ -98,13 +93,13 @@
     <div class="row">
       <div class="col s3 m1">
       
-        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/docker/"><i class="mdi-navigation-arrow-back"></i></a>
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
       
       </div>
       <div class="col s6 m10 center">&nbsp</div>
       <div class="col s3 m1">
       
-        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/setupangularapp/"><i class="mdi-navigation-arrow-forward"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/pharousermanagement/"><i class="mdi-navigation-arrow-forward"></i></a>
       
       </div>
     </div>
