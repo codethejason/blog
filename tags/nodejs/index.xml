@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/tags/nodejs/</link>
+    <description>Recent content in Nodejs on Jason&#39;s Google Code-in Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Jan 2016 16:43:16 -0500</lastBuildDate>
+    <atom:link href="http://codethejason.github.io/blog/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using NodeJS for the First Time</title>
+      <link>http://codethejason.github.io/blog/nodejs/</link>
+      <pubDate>Tue, 12 Jan 2016 16:43:16 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/nodejs/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; is an asyncronous event driven Javascript framework. The main feature that separates NodeJS from other systems is is its non reliance on threads and blocking code. NodeJS does not require that a certain process finishes before starting another one. This allows the application to move on instead of being stuck on long processes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://docs.oracle.com/cd/A87860_01/doc/appdev.817/a76975/oci02ba5.gif&#34; alt=&#34;non blocking&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;my-opinions-on-nodejs:4d1400037a492e28b65e1117ff3d5186&#34;&gt;My Opinions on NodeJS&lt;/h5&gt;
+
+&lt;p&gt;NodeJS was a load of fun to work with, and I really did enjoy using it. Since it is based on Javascript, the learning curve for me wasn&amp;rsquo;t that bad and I picked it up fast. It felt very familiar even though I haven&amp;rsquo;t worked with the framework. Setup on both Windows and Linux were easy for the most part, but on Ubuntu 14.04 x64 LTS, I was confused why my Node app was not running for a while before discovering that Ubuntu&amp;rsquo;s package manager had another package called &lt;em&gt;node&lt;/em&gt; unrelated to the package &lt;em&gt;nodejs&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;I will be honest: I did not enjoy the non-blocking feeature of NodeJS at first because it requires me to do a copious amount of callbacks. I will be trying out something different next time so I do not get code that is described on &lt;a href=&#34;callbackhell.com&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Although I was very familiar with Javascript, I still felt weird using it on the server side. I am used to the idea that Javscript is a client side language designed to provide and modify visual elements. Right now I still feel a lot more comfortable with PHP for server side code, but I will try using NodeJS on my next back end application.&lt;/p&gt;
+
+&lt;h5 id=&#34;some-code-i-wrote:4d1400037a492e28b65e1117ff3d5186&#34;&gt;Some Code I Wrote&lt;/h5&gt;
+
+&lt;p&gt;I wrote a simple &lt;a href=&#34;https://gist.github.com/codethejason/c2b2d71814752eb10d4d&#34;&gt;script&lt;/a&gt; to check for membership of a user in FOSSASIA&amp;rsquo;s GCI Students organization on Github. This was the first NodeJS code I ever wrote, and roonyh (Aruna Herath) encouraged me to try out other tasks. I then created a &lt;a href=&#34;https://github.com/codethejason/GithubOAuth&#34;&gt;GitHub OAuth Application&lt;/a&gt; which logs in the user using a GitHub OAuth token. I used &lt;em&gt;httpdispatcher&lt;/em&gt; to route my application and &lt;em&gt;requests&lt;/em&gt; to get data from GitHub&amp;rsquo;s API. I spent a lot of time on the second application, but it was all worth it considering I now have a lot more knowledge about NodeJS than I had when I started out :). I will definitely be using NodeJS in the future.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436439824nodejs-logo.png&#34; alt=&#34;NODEJS&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
