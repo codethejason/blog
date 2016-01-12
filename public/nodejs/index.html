@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Using NodeJS for the First Time</title>
+  <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://codethejason.github.io/blog/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://codethejason.github.io/blog"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Jason&#39;s Google Code-in Blog</h1>
+          <h2 style="color: #fff; font-size: 20px; text-align:center;">GCI Organization: <a href="http://fossasia.org/">FOSSASIA</a></h2>
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+        <div class="row center">
+        
+        
+        
+        
+        
+          <a href="http://codethejason.github.io/blog/index.xml"><img src="http://codethejason.github.io/blog/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://codethejason.github.io/blog/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Using NodeJS for the First Time</h4>
+          <p>
+          
+            
+              <a href="http://codethejason.github.io/blog/categories/other-gci-projects/">other gci projects</a>
+            
+           
+          </p>
+          <p>
+
+<p><a href="https://nodejs.org">NodeJS</a> is an asyncronous event driven Javascript framework. The main feature that separates NodeJS from other systems is is its non reliance on threads and blocking code. NodeJS does not require that a certain process finishes before starting another one. This allows the application to move on instead of being stuck on long processes.</p>
+
+<p><img src="http://docs.oracle.com/cd/A87860_01/doc/appdev.817/a76975/oci02ba5.gif" alt="non blocking" /></p>
+
+<h5 id="my-opinions-on-nodejs:4d1400037a492e28b65e1117ff3d5186">My Opinions on NodeJS</h5>
+
+<p>NodeJS was a load of fun to work with, and I really did enjoy using it. Since it is based on Javascript, the learning curve for me wasn&rsquo;t that bad and I picked it up fast. It felt very familiar even though I haven&rsquo;t worked with the framework. Setup on both Windows and Linux were easy for the most part, but on Ubuntu 14.04 x64 LTS, I was confused why my Node app was not running for a while before discovering that Ubuntu&rsquo;s package manager had another package called <em>node</em> unrelated to the package <em>nodejs</em>).</p>
+
+<p>I will be honest: I did not enjoy the non-blocking feeature of NodeJS at first because it requires me to do a copious amount of callbacks. I will be trying out something different next time so I do not get code that is described on <a href="callbackhell.com">this page</a>.</p>
+
+<p>Although I was very familiar with Javascript, I still felt weird using it on the server side. I am used to the idea that Javscript is a client side language designed to provide and modify visual elements. Right now I still feel a lot more comfortable with PHP for server side code, but I will try using NodeJS on my next back end application.</p>
+
+<h5 id="some-code-i-wrote:4d1400037a492e28b65e1117ff3d5186">Some Code I Wrote</h5>
+
+<p>I wrote a simple <a href="https://gist.github.com/codethejason/c2b2d71814752eb10d4d">script</a> to check for membership of a user in FOSSASIA&rsquo;s GCI Students organization on Github. This was the first NodeJS code I ever wrote, and roonyh (Aruna Herath) encouraged me to try out other tasks. I then created a <a href="https://github.com/codethejason/GithubOAuth">GitHub OAuth Application</a> which logs in the user using a GitHub OAuth token. I used <em>httpdispatcher</em> to route my application and <em>requests</em> to get data from GitHub&rsquo;s API. I spent a lot of time on the second application, but it was all worth it considering I now have a lot more knowledge about NodeJS than I had when I started out :). I will definitely be using NodeJS in the future.</p>
+
+<p><img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436439824nodejs-logo.png" alt="NODEJS" /></p>
+</p>
+          <p>12 Jan 2016
+            
+              
+                <a href="http://codethejason.github.io/blog/tags/nodejs/">#NodeJS</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/javascript/">#javascript</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/server-side/">#server side</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/first/">#first</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/framework/">#framework</a>
+              
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/docker/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/materialize.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  </body>
+</html>
+
