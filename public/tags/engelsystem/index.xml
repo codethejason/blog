@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Jason&#39;s Google Code-in Blog</title>
-    <link>http://codethejason.github.io/blog/tags/linux/</link>
-    <description>Recent content in Linux on Jason&#39;s Google Code-in Blog</description>
+    <title>Engelsystem on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/tags/engelsystem/</link>
+    <description>Recent content in Engelsystem on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Jan 2016 17:22:21 -0500</lastBuildDate>
-    <atom:link href="http://codethejason.github.io/blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://codethejason.github.io/blog/tags/engelsystem/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Deploy EngelSystem on Your Server</title>
@@ -83,24 +83,6 @@ nano /etc/apache2/sites-available/000-default.conf
 &lt;p&gt;&lt;img src=&#34;../engelsystem/changehost.png&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you made it this far, congratulations! You have successfully set up Engelsystem and can use it to manage your event.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Exploring Docker</title>
-      <link>http://codethejason.github.io/blog/docker/</link>
-      <pubDate>Fri, 01 Jan 2016 17:16:25 -0500</pubDate>
-      
-      <guid>http://codethejason.github.io/blog/docker/</guid>
-      <description>&lt;p&gt;I have always seen Docker being talked about in the Linux community and have seen it as one of the DigitalOcean quick app install options. I had no idea what it was and did not realize it&amp;rsquo;s function. &lt;a href=&#34;https://www.docker.com/what-docker&#34;&gt;Docker&lt;/a&gt; is actually a container technology designed to improve efficiency. Traditional virtual machines house their own guest operating system and libraries to run an application. As one can see, if there is a large number of virtual machines running their own operating system, the workflow is inefficient. Docker combines the operating systems and other shared parts, so a low spec server could be running hundreds of containers without a hitch. Docker also makes collaboration and publishing easier since it creates a common framework for people to work together and scales easily.&lt;/p&gt;
-
-&lt;p&gt;Docker has a few tools in its Toolbox to help with development. &lt;a href=&#34;https://www.docker.com/docker-compose&#34;&gt;Docker Compose&lt;/a&gt; is a tool used for running small parts of application on different containers while treating it as a single application. There is no need to manage each and every separate container. &lt;a href=&#34;https://docs.docker.com/machine/&#34;&gt;Docker Machine&lt;/a&gt; makes host creation easier by automatically configuring Docker on the hosts. &lt;a href=&#34;https://www.docker.com/docker-swarm&#34;&gt;Docker Swarm&lt;/a&gt; is exactly what it sounds like; it provides clustering capabilities to manage a whole swarm of Docker Engines in a since Docker Engine.&lt;/p&gt;
-
-&lt;p&gt;I found &lt;a href=&#34;https://docs.docker.com/engine/installation/&#34;&gt;installation&lt;/a&gt; to be a little bit frustrating because I could not get Docker to work on one of my Windows computers. When I tried to ask for help, there was virtually nobody active on the IRC. I proceeded to install Docker on another computer without a problem. I made a 3rd tier application (talks to database) that connects to MySQL &lt;a href=&#34;https://github.com/codethejason/gcismallprojects2015/tree/master/simpleDockerApp&#34;&gt;here&lt;/a&gt; and ran it on a Docker container.&lt;/p&gt;
-
-&lt;p&gt;By the way, Happy New Year!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://4.bp.blogspot.com/-dZ7-CqEkHhU/VJ6dGmIHCHI/AAAAAAAAH28/eYAWdPY_XM0/w350/Happy-New-Year.png&#34; alt=&#34;hny&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

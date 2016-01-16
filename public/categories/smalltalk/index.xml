@@ -23,6 +23,8 @@
 
 &lt;p&gt;&lt;img src=&#34;http://puu.sh/mwjxG/55f91bae81.png&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;You can see my current code &lt;a href=&#34;http://www.smalltalkhub.com/#!/~codethejason/usermanagementapp/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
 &lt;p&gt;After this task, I would like to modify the code so an additional confirmPassword entry does not have to be created in the Contact database. Also, I would like to implement eMBee&amp;rsquo;s suggestions of hiding the password (best solution found so far is &lt;em&gt;PasswordDialogBox&lt;/em&gt;, but I would prefer it to be in the same form as the other fields) and making the role field into a list of strings instead of one long string with different roles. I am excited to continue working with Pharo smalltalk and will be taking on some more challenges!&lt;/p&gt;
 </description>
     </item>

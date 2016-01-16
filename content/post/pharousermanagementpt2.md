@@ -14,5 +14,7 @@ I added a small check using if statements to check that the two passwords match.
 
 ![screenshot](http://puu.sh/mwjxG/55f91bae81.png)  
 
+You can see my current code [here](http://www.smalltalkhub.com/#!/~codethejason/usermanagementapp/).  
+
 
 After this task, I would like to modify the code so an additional confirmPassword entry does not have to be created in the Contact database. Also, I would like to implement eMBee's suggestions of hiding the password (best solution found so far is *PasswordDialogBox*, but I would prefer it to be in the same form as the other fields) and making the role field into a list of strings instead of one long string with different roles. I am excited to continue working with Pharo smalltalk and will be taking on some more challenges!  
