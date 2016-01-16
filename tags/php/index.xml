@@ -6,8 +6,85 @@
     <description>Recent content in Php on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Dec 2015 23:19:50 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jan 2016 17:22:21 -0500</lastBuildDate>
     <atom:link href="http://codethejason.github.io/blog/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Deploy EngelSystem on Your Server</title>
+      <link>http://codethejason.github.io/blog/engelsystem/</link>
+      <pubDate>Sat, 16 Jan 2016 17:22:21 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/engelsystem/</guid>
+      <description>
+
+&lt;p&gt;Today, I decided to set up &lt;a href=&#34;https://github.com/engelsystem/engelsystem&#34;&gt;Engelsystem&lt;/a&gt; on a clean server as a task for Google Code-in. My first impression when looking at the PHP application was that it is a well-built MVC app. It seems to have everything an event manager could want. When I looked at the README, all the instructions were in German, but I decided to follow the gist of it anyways. I will be telling you how to setup the application step by step in English on Ubuntu 14.04 LTS x64.&lt;/p&gt;
+
+&lt;h4 id=&#34;instructions-for-setup:b7304ab3082bb231740622fec109fd30&#34;&gt;Instructions for Setup&lt;/h4&gt;
+
+&lt;h5 id=&#34;step-1-setup-lamp-and-install-git:b7304ab3082bb231740622fec109fd30&#34;&gt;Step 1: Setup LAMP and install GIT&lt;/h5&gt;
+
+&lt;p&gt;The first you want to do is to setup LAMP stack (linux, apache, mysql, and php). From &lt;a href=&#34;http://digitalocean.com&#34;&gt;DigitalOcean&lt;/a&gt;, you may just select the LAMP One-click install app. Otherwise, please follow the tutorial &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04&#34;&gt;here&lt;/a&gt; on how to set up lamp on Ubuntu 14.04 LTS x64. If you are running this app on a different operating system, a quick Google search will provide you with installation steps.&lt;/p&gt;
+
+&lt;p&gt;Afterwards, you may install git by these commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get update
+apt-get install git -y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;step-2-clone-the-repository-and-setup-database:b7304ab3082bb231740622fec109fd30&#34;&gt;Step 2: Clone the Repository and Setup Database&lt;/h5&gt;
+
+&lt;p&gt;First, clone the repository (the recursive parameter allows us to clone the submodules):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone --recursive https://github.com/engelsystem/engelsystem.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the absolute path of the engelsystem directory. For example, mine is &lt;code&gt;/root&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next, configure your MySQL engelsystem database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql -u root -p
+[Enter your password]
+CREATE DATABASE engelsystem;
+use engelsystem;
+source [path to engelsystem]/engelsystem/db/install.sql;
+source [path to engelsystem]/engelsystem/db/update.sql;
+exit;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Go to &lt;code&gt;engelsystem/config&lt;/code&gt; and copy the default config into &lt;code&gt;config.php&lt;/code&gt;. Modify the new file to match your MySQL credentials.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-3-test-that-app-is-working:b7304ab3082bb231740622fec109fd30&#34;&gt;Step 3: Test That App is Working&lt;/h5&gt;
+
+&lt;p&gt;Move the app to your &lt;code&gt;/var/www/html/&lt;/code&gt; directory by typing &lt;code&gt;mv ./engelsystem /var/www/html&lt;/code&gt; (alternatively create a symlink to your current directory). Go to your browser and type in &lt;code&gt;[serverhost]/engelsystem/public&lt;/code&gt; to see the application in action.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../engelsystem/firsttimerun.jpg&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To login, type use the following credentials:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Username: admin
+Password: asdfasdf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Be sure to change your password for security reasons.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../engelsystem/loggedin.png&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;step-4-modify-apache-to-use-server-for-production:b7304ab3082bb231740622fec109fd30&#34;&gt;Step 4: Modify Apache to Use Server for Production&lt;/h5&gt;
+
+&lt;p&gt;We must make sure to point our apache2 document root to the Engelsystem directory to prevent any user from accessing anything other than the &lt;code&gt;public/&lt;/code&gt; directory for security reasons. Do this by modifying the apache2 configuration file (assuming you are running this on a server hosting no other sites):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install nano -y
+nano /etc/apache2/sites-available/000-default.conf
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Change &lt;code&gt;DocumentRoot /var/www/html&lt;/code&gt; into &lt;code&gt;DocumentRoot /var/www/html/engelsystem/public&lt;/code&gt;. Restart apache by typing &lt;code&gt;service apache2 restart&lt;/code&gt;. See the result of your page by going to your host in your browser.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../engelsystem/changehost.png&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you made it this far, congratulations! You have successfully set up Engelsystem and can use it to manage your event.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Developing a Register and Login System with Codeigniter</title>

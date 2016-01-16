@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Deploy EngelSystem on Your Server</title>
+  <link href="http://codethejason.github.io/blog/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://codethejason.github.io/blog/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://codethejason.github.io/blog/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://codethejason.github.io/blog"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://codethejason.github.io/blog/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Jason&#39;s Google Code-in Blog</h1>
+          <h2 style="color: #fff; font-size: 20px; text-align:center;">GCI Organization: <a href="http://fossasia.org/">FOSSASIA</a></h2>
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+        <div class="row center">
+        
+        
+        
+        
+        
+          <a href="http://codethejason.github.io/blog/index.xml"><img src="http://codethejason.github.io/blog/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://codethejason.github.io/blog/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Deploy EngelSystem on Your Server</h4>
+          <p>
+          
+            
+              <a href="http://codethejason.github.io/blog/categories/miscellaneous/">miscellaneous</a>
+            
+           
+          </p>
+          <p>
+
+<p>Today, I decided to set up <a href="https://github.com/engelsystem/engelsystem">Engelsystem</a> on a clean server as a task for Google Code-in. My first impression when looking at the PHP application was that it is a well-built MVC app. It seems to have everything an event manager could want. When I looked at the README, all the instructions were in German, but I decided to follow the gist of it anyways. I will be telling you how to setup the application step by step in English on Ubuntu 14.04 LTS x64.</p>
+
+<h4 id="instructions-for-setup:b7304ab3082bb231740622fec109fd30">Instructions for Setup</h4>
+
+<h5 id="step-1-setup-lamp-and-install-git:b7304ab3082bb231740622fec109fd30">Step 1: Setup LAMP and install GIT</h5>
+
+<p>The first you want to do is to setup LAMP stack (linux, apache, mysql, and php). From <a href="http://digitalocean.com">DigitalOcean</a>, you may just select the LAMP One-click install app. Otherwise, please follow the tutorial <a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04">here</a> on how to set up lamp on Ubuntu 14.04 LTS x64. If you are running this app on a different operating system, a quick Google search will provide you with installation steps.</p>
+
+<p>Afterwards, you may install git by these commands:</p>
+
+<pre><code>apt-get update
+apt-get install git -y
+</code></pre>
+
+<h5 id="step-2-clone-the-repository-and-setup-database:b7304ab3082bb231740622fec109fd30">Step 2: Clone the Repository and Setup Database</h5>
+
+<p>First, clone the repository (the recursive parameter allows us to clone the submodules):</p>
+
+<pre><code>git clone --recursive https://github.com/engelsystem/engelsystem.git
+</code></pre>
+
+<p>Note the absolute path of the engelsystem directory. For example, mine is <code>/root</code>.</p>
+
+<p>Next, configure your MySQL engelsystem database:</p>
+
+<pre><code>mysql -u root -p
+[Enter your password]
+CREATE DATABASE engelsystem;
+use engelsystem;
+source [path to engelsystem]/engelsystem/db/install.sql;
+source [path to engelsystem]/engelsystem/db/update.sql;
+exit;
+</code></pre>
+
+<p>Go to <code>engelsystem/config</code> and copy the default config into <code>config.php</code>. Modify the new file to match your MySQL credentials.</p>
+
+<h5 id="step-3-test-that-app-is-working:b7304ab3082bb231740622fec109fd30">Step 3: Test That App is Working</h5>
+
+<p>Move the app to your <code>/var/www/html/</code> directory by typing <code>mv ./engelsystem /var/www/html</code> (alternatively create a symlink to your current directory). Go to your browser and type in <code>[serverhost]/engelsystem/public</code> to see the application in action.</p>
+
+<p><img src="../engelsystem/firsttimerun.jpg" alt="screenshot" /></p>
+
+<p>To login, type use the following credentials:</p>
+
+<pre><code>Username: admin
+Password: asdfasdf
+</code></pre>
+
+<p>Be sure to change your password for security reasons.</p>
+
+<p><img src="../engelsystem/loggedin.png" alt="screenshot" /></p>
+
+<h5 id="step-4-modify-apache-to-use-server-for-production:b7304ab3082bb231740622fec109fd30">Step 4: Modify Apache to Use Server for Production</h5>
+
+<p>We must make sure to point our apache2 document root to the Engelsystem directory to prevent any user from accessing anything other than the <code>public/</code> directory for security reasons. Do this by modifying the apache2 configuration file (assuming you are running this on a server hosting no other sites):</p>
+
+<pre><code>apt-get install nano -y
+nano /etc/apache2/sites-available/000-default.conf
+
+</code></pre>
+
+<p>Change <code>DocumentRoot /var/www/html</code> into <code>DocumentRoot /var/www/html/engelsystem/public</code>. Restart apache by typing <code>service apache2 restart</code>. See the result of your page by going to your host in your browser.</p>
+
+<p><img src="../engelsystem/changehost.png" alt="screenshot" /></p>
+
+<p>If you made it this far, congratulations! You have successfully set up Engelsystem and can use it to manage your event.</p>
+</p>
+          <p>16 Jan 2016
+            
+              
+                <a href="http://codethejason.github.io/blog/tags/linux/">#linux</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/php/">#php</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/mysql/">#mysql</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/apache2/">#apache2</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/engelsystem/">#engelsystem</a>
+              
+                <a href="http://codethejason.github.io/blog/tags/lamp/">#lamp</a>
+              
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://codethejason.github.io/blog/pharousermanagementpt2/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/materialize.min.js"></script>
+  <script src="http://codethejason.github.io/blog/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  </body>
+</html>
+
