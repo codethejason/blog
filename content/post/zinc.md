@@ -19,7 +19,20 @@ I added some tests to ensure that the web application was running as expected. E
 ![scrn](http://puu.sh/mETKh/fc23c96713.jpg)
 
 ##### Final Thoughts
-The process of serving a simple web application was quite complex. Although the application flow makes sense, I probably would not use Zinc to serve up web applications in production. The code is detailed with lots of methods I wouldn't normally need (i.e. `value`). Keeping in mind that Pharo was designed for learning and understanding code deeply and intuitively, I think it certainly did its job in that area :).
+The process of serving a simple web application was quite complex. Although the application flow makes sense, I probably would not use Zinc to serve up web applications in production. The code has a few methods I don't understand the point of. For example, `#value` does not seem to need to exist when `#handleRequest:` could be called. Keeping in mind that Pharo was designed for learning and understanding code deeply and intuitively, I think it certainly did its job in that area :).
 
 
+##### Run My Code
+Just want to see the final result? Get the `MyFirstWebApp` package from [here](http://www.smalltalkhub.com/#!/~codethejason/WebApp/).  
+To start the server, run   
 
+```
+ZnServer startDefaultOn: 8080.
+ZnServer default delegate map: #image to: MyFirstWebApp new.
+```
+
+To stop the server, run   
+
+```
+ZnServer stopDefault.
+```

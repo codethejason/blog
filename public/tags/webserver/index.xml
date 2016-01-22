@@ -33,7 +33,21 @@
 
 &lt;h5 id=&#34;final-thoughts:2f23471afcd50320a0078eaf11931ef0&#34;&gt;Final Thoughts&lt;/h5&gt;
 
-&lt;p&gt;The process of serving a simple web application was quite complex. Although the application flow makes sense, I probably would not use Zinc to serve up web applications in production. The code is detailed with lots of methods I wouldn&amp;rsquo;t normally need (i.e. &lt;code&gt;value&lt;/code&gt;). Keeping in mind that Pharo was designed for learning and understanding code deeply and intuitively, I think it certainly did its job in that area :).&lt;/p&gt;
+&lt;p&gt;The process of serving a simple web application was quite complex. Although the application flow makes sense, I probably would not use Zinc to serve up web applications in production. The code has a few methods I don&amp;rsquo;t understand the point of. For example, &lt;code&gt;#value&lt;/code&gt; does not seem to need to exist when &lt;code&gt;#handleRequest:&lt;/code&gt; could be called. Keeping in mind that Pharo was designed for learning and understanding code deeply and intuitively, I think it certainly did its job in that area :).&lt;/p&gt;
+
+&lt;h5 id=&#34;run-my-code:2f23471afcd50320a0078eaf11931ef0&#34;&gt;Run My Code&lt;/h5&gt;
+
+&lt;p&gt;Just want to see the final result? Get the &lt;code&gt;MyFirstWebApp&lt;/code&gt; package from &lt;a href=&#34;http://www.smalltalkhub.com/#!/~codethejason/WebApp/&#34;&gt;here&lt;/a&gt;.&lt;br /&gt;
+To start the server, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ZnServer startDefaultOn: 8080.
+ZnServer default delegate map: #image to: MyFirstWebApp new.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To stop the server, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ZnServer stopDefault.
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
