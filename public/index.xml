@@ -6,8 +6,36 @@
     <description>Recent content on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Jan 2016 17:22:21 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 21 Jan 2016 19:06:06 -0500</lastBuildDate>
     <atom:link href="http://codethejason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Creating a Web App with Zinc</title>
+      <link>http://codethejason.github.io/blog/zinc/</link>
+      <pubDate>Thu, 21 Jan 2016 19:06:06 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/zinc/</guid>
+      <description>
+
+&lt;p&gt;Working with Zinc on Pharo Smalltalk to create a small web application was extremely different than creating a Web App with PHP, NodeJS, or even Python. Zinc is a framework in smalltalk that deals with the HTTP networking protocol using the reference platform of Pharo. I have followed &lt;a href=&#34;http://zn.stfx.eu/zn/build-and-deploy-1st-webapp/&#34;&gt;this&lt;/a&gt; tutorial to develop a web app which allows the user to change the picture.  I have to say that the process was a lot more complicated than I thought.&lt;/p&gt;
+
+&lt;h5 id=&#34;serving-a-page:2f23471afcd50320a0078eaf11931ef0&#34;&gt;Serving a Page&lt;/h5&gt;
+
+&lt;p&gt;All the instructions are in the tutorial, so I will be summarizing what I did. I first worked on serving up the HTML page which took a lot more steps than I thought. Normally, I can just create an HTML file on my system and open it in a web browser. I need to handle the request of the user from Zinc to be able to serve it. Then, I added the functionality for Pharo to download the image and serve it to the user on the &lt;em&gt;/image&lt;/em&gt; directory of the website. I then added the ability to upload images from the user and ensured the data was a valid image by performing a few checks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/mETNa/638ea56322.jpg&#34; alt=&#34;scrn&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;adding-tests:2f23471afcd50320a0078eaf11931ef0&#34;&gt;Adding Tests&lt;/h5&gt;
+
+&lt;p&gt;I added some tests to ensure that the web application was running as expected. Each tests references the &lt;code&gt;withServerDo&lt;/code&gt; method which controls the server to make sure it starts and stops properly. The first test checks to make sure there is HTML on the &lt;em&gt;/image&lt;/em&gt; path. The second test ensures that the default raw image was being outputted correctly by asserting the equality of the served image and the image in the app object. The third test makes sure that the uploaded image changed to what was expected by using a sample image.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://puu.sh/mETKh/fc23c96713.jpg&#34; alt=&#34;scrn&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;final-thoughts:2f23471afcd50320a0078eaf11931ef0&#34;&gt;Final Thoughts&lt;/h5&gt;
+
+&lt;p&gt;The process of serving a simple web application was quite complex. Although the application flow makes sense, I probably would not use Zinc to serve up web applications in production. The code is detailed with lots of methods I wouldn&amp;rsquo;t normally need (i.e. &lt;code&gt;value&lt;/code&gt;). Keeping in mind that Pharo was designed for learning and understanding code deeply and intuitively, I think it certainly did its job in that area :).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Deploy EngelSystem on Your Server</title>
