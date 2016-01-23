@@ -44,6 +44,8 @@ To start the server, run&lt;/p&gt;
 ZnServer default delegate map: #image to: MyFirstWebApp new.
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;Open the server at &lt;a href=&#34;http://localhost:8080/image&#34;&gt;http://localhost:8080/image&lt;/a&gt;.&lt;/p&gt;
+
 &lt;p&gt;To stop the server, run&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ZnServer stopDefault.
