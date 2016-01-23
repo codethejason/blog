@@ -6,3 +6,4 @@ contentdir = "content/post"
 layoutdir = "layouts"
 publishdir = "public"
 canonifyurls = true
+disqusShortname = "codethejason"
