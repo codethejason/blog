@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wrap Up on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/tags/wrap-up/</link>
+    <description>Recent content in Wrap Up on Jason&#39;s Google Code-in Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jan 2016 16:43:05 -0500</lastBuildDate>
+    <atom:link href="http://codethejason.github.io/blog/tags/wrap-up/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My Google Code-in Experience with FOSSASIA</title>
+      <link>http://codethejason.github.io/blog/gciexperience/</link>
+      <pubDate>Fri, 22 Jan 2016 16:43:05 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/gciexperience/</guid>
+      <description>
+
+&lt;p&gt;As we all know, Google Code-in 2015 is sadly coming to a close on January 25, 2016. In this blog post, I will describe my wonderful experience working with the awesome FOSSASIA community while learns tons of new stuff. I would like to thank the admins Mario Behling, Hong Phuc Dang, and Mohit Kanwal for making this FOSSASIA&amp;rsquo;s participation in GCI possible. I would also like to thank all the mentors for guidance and support.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../gci/fossasia.png&#34; alt=&#34;fossasia&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;coming-into-gci:b044e5a8ff8584fdadee498d91837873&#34;&gt;Coming into GCI&lt;/h5&gt;
+
+&lt;p&gt;I entered the contest right from the beginning: December 7, 2015. FOSSASIA instantly jumped out at m while browsing the list of organizations. I liked the mission of spreading free and open source software to form a better future with Open Technologies and ICT and promoting growth in science in youth. I decided to dedicate my time with FOSSASIA for the entire length of Google Code-in. I was so excited to learn new technologies and put my programming skills that I have learned before into use.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../gci/computer.jpg&#34; alt=&#34;computers&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;projects:b044e5a8ff8584fdadee498d91837873&#34;&gt;Projects&lt;/h5&gt;
+
+&lt;p&gt;My &lt;a href=&#34;https://github.com/codethejason/gci2015&#34;&gt;projects&lt;/a&gt; varied widely ranging from hangman in JavaScript to a user management system in PHP Codeignitor.  I tried to claim a variety of tasks but ended up mainly focusing on Javascript tasks. I had a chance to learn NodeJS and apply it to a GitHub OAuth application. My favorite application was my &lt;a href=&#34;http://codethejason.github.io/checkers/&#34;&gt;checkers&lt;/a&gt; app. It is completely based on objects including the board, pieces, and tiles. This object oriented design I learned by reading &lt;a href=&#34;https://github.com/getify/You-Dont-Know-JS&#34;&gt;&lt;em&gt;You Don&amp;rsquo;t Know JS&lt;/em&gt;&lt;/a&gt; makes it easy to understand the code and improve it. A few other people used this through GNU Licensing to accomplish their tasks (i.e. &lt;a href=&#34;https://github.com/yasoob/checkers&#34;&gt;yasoob&lt;/a&gt;, &lt;a href=&#34;https://github.com/shiftsayan/checkers&#34;&gt;shiftsayan&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The Pharo tasks created by eMBee (Martin) were especially interesting because I learned a computer language I had never seen or heard of before in my life. The language was completely different than what I was used to seeing (for example, operators in Pharo are actually binary messages); it is probably one of the most difficult languages I have learned (difficult to find answers because of the small community). It took some time for me to get used to it, but I ended up making a lightsout game, a user management application, and a web application (which was very  different from a web application I would build on PHP, NodeJS, or Python). You can see my packages &lt;a href=&#34;http://www.smalltalkhub.com/#!/~codethejason&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../gci/repos.png&#34; alt=&#34;prwatch&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;contributions:b044e5a8ff8584fdadee498d91837873&#34;&gt;Contributions&lt;/h5&gt;
+
+&lt;p&gt;I made many contributions during the course of GCI to Loklak-Webtweets, WhatcanIdoforFOSSASIA, and more. I built a GitHub PR Autoresponder bot to comment the preview link each time someone opened a pull request on the FOSSASIA GCI student site as shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../gci/prwatch.png&#34; alt=&#34;prwatch&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I did not know anything about the GitHub API or webhooks before this task; I did not know GitHub offered so many management tools to take control of the project. I have learned GitHub at my school before, but I always committed to my own repository so there were no merge conflicts or other issues to deal with. This experience gave me the taste of what open source collaboration is like with Git. I got a chance to put the objectives I learned in school into use in real world applications and to extend my knowledge of Git further.&lt;/p&gt;
+
+&lt;p&gt;I also contributed to the &lt;a href=&#34;github.com/fossasia/gci15.fossasia.org&#34;&gt;GCI Student Site&lt;/a&gt; by replacing the twitter widget with a loklak implementation, improving the blog section dramatically, adding the loklak peers and footer section, and doing a lot of other contributions to improve the overall user experience. Special thanks to Mario Behling, Jigyasa Grover, Aruna Herath, Sudheesh Singanamalla, Manan Wason, and Rohit Kashyap for working with me on the GCI site. I implemented Loklak&amp;rsquo;s search API on the 2015 and 2016 FOSSASIA event sites as well as on &lt;a href=&#34;http://fossasia.org&#34;&gt;fossasia.org&lt;/a&gt;. I helped others with issues on GitHub and also invited a few of my friends to join GCI with FOSSASIA (i.e. aristochaotic, scorpianz1525). I helped write tests for loklak_webclient and created issues on different repositories.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../gci/pr.jpg&#34; alt=&#34;prwatch&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;gci-improvements-for-next-year:b044e5a8ff8584fdadee498d91837873&#34;&gt;GCI Improvements for Next Year&lt;/h5&gt;
+
+&lt;p&gt;FOSSASIA did an awesome job as an organization for GCI. All the mentors were helpful and guided me towards my goals. In the beginning, it took a while for me to be added to the FOSSASIA GCI Students group, but the application that roonyh built will allow all mentors to add students to the group (&lt;a href=&#34;https://github.com/roonyh/fossasia-gci-companion&#34;&gt;FOSSASIA GCI Companion&lt;/a&gt;), speeding up the process next year. I also thought the task instances could be better managed as in some cases the task was still open while it was already accomplished. More specialized varied &amp;lsquo;learning&amp;rsquo;  tasks could be added (i.e. learning electron with NodeJS), but the variety of tasks this year was pretty decent.&lt;/p&gt;
+
+&lt;h5 id=&#34;future-for-myself:b044e5a8ff8584fdadee498d91837873&#34;&gt;Future for Myself&lt;/h5&gt;
+
+&lt;p&gt;I learned more from this contest than I have in any classroom environment or self studying. I learned new programming practices, used services to make development more efficient, fiddled with new languages, and had a chance to utilize the concepts I learned previously. The most important thing I learned about by far is open source. Open source allows everyone to benefit from the freely available source code. It also allows the software to be more secure, flexible, and &amp;ldquo;featureful&amp;rdquo;, increasing the quality of the software. Let us take a look at my commit history:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../gci/contributions.png&#34; alt=&#34;contributions&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I had never been engaged in any open source project before, but after GCI I will now continue to stick with FOSSASIA and explore other projects that interest me. Knowing I can gain experience and help the world at the same time is a wonderful feeling. Anyways, I hope fellow students also enjoyed their time at GCI and will continue to contribute to open source!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

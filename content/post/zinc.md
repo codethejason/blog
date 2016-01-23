@@ -31,6 +31,8 @@ ZnServer startDefaultOn: 8080.
 ZnServer default delegate map: #image to: MyFirstWebApp new.
 ```
 
+Open the server at [http://localhost:8080/image](http://localhost:8080/image).  
+
 To stop the server, run   
 
 ```
