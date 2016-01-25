@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Squeak on Jason&#39;s Google Code-in Blog</title>
+    <link>http://codethejason.github.io/blog/tags/squeak/</link>
+    <description>Recent content in Squeak on Jason&#39;s Google Code-in Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Jan 2016 23:05:17 -0500</lastBuildDate>
+    <atom:link href="http://codethejason.github.io/blog/tags/squeak/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>REST API with Teapot</title>
+      <link>http://codethejason.github.io/blog/teapot/</link>
+      <pubDate>Sun, 24 Jan 2016 23:05:17 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/teapot/</guid>
+      <description>&lt;p&gt;Today, my task was to write a REST API in Pharo using the Teapot framework. Teapot is a packaged designed to make making REST APIs with Pharo A LOT easier than writing a REST API from scratch in Zinc. For example, to output &lt;em&gt;Hello World&lt;/em&gt; when a user navigates to &lt;code&gt;/hello&lt;/code&gt;, this is all the code that is needed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Teapot on
+    GET: &#39;/welcome&#39; -&amp;gt; &#39;Hello World!&#39;;
+    start.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I wrote a package named &lt;code&gt;UserAPI&lt;/code&gt; on &lt;a href=&#34;http://www.smalltalkhub.com/#!/~codethejason/UserAPI/&#34;&gt;SmallTalkHub&lt;/a&gt; that relies on the &lt;code&gt;ContactManager&lt;/code&gt; package &lt;a href=&#34;http://www.smalltalkhub.com/#!/~codethejason/usermanagementapp/&#34;&gt;here&lt;/a&gt; to retrieve a list of users and display it as JSON in the browser after a user navigates to &lt;code&gt;/users&lt;/code&gt;. I took some inspiration from &lt;a href=&#34;https://skrishnamachari.wordpress.com/2014/08/28/teapot-pharo-web-rest-framework-it-aint-micro/&#34;&gt;this blog&lt;/a&gt;. To set it up, load the packages into your Pharo image. After that, run this command in Playground to start up the app:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;teapot := Teapot configure: {
+#defaultOutput -&amp;gt; #json. 
+#port -&amp;gt; 8080. 
+#debugMode -&amp;gt; true 
+}.
+teapotInstance := TeapotRequestHandler new.
+teapotInstance runApp: teapot.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For production, you can set the debugMode to false. To stop the server, stop all instances of Teapot:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Teapot stopAll.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! In my very simple app, I really only have two methods: &lt;code&gt;#handleGetRequest:&lt;/code&gt; and &lt;code&gt;#runApp:&lt;/code&gt;. The &lt;code&gt;runApp&lt;/code&gt; method starts Teapot and defines the path Teapot should &amp;ldquo;activate&amp;rdquo; in its API. The &lt;code&gt;handleGetRequest&lt;/code&gt; method handles the request when the &lt;code&gt;/users&lt;/code&gt; page is hit. It calls the Contact class which returns an ordered collection. The app uses NeoJSON to parse the ordered collection to JSON suitable for a RESTful API.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
