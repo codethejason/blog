@@ -6,8 +6,18 @@
     <description>Recent content in Gci on Jason&#39;s Google Code-in Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2016 16:43:05 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 09 Mar 2016 18:30:49 -0500</lastBuildDate>
     <atom:link href="http://codethejason.github.io/blog/tags/gci/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Grand Prize Winner</title>
+      <link>http://codethejason.github.io/blog/gcigrandprize/</link>
+      <pubDate>Wed, 09 Mar 2016 18:30:49 -0500</pubDate>
+      
+      <guid>http://codethejason.github.io/blog/gcigrandprize/</guid>
+      <description>&lt;p&gt;This is just a short post to acknowledge that I have won one of 28 spots in the Google Code-in contest (more details &lt;a href=&#34;http://google-opensource.blogspot.com/2016/02/announcing-google-code-in-2015-winners.html&#34;&gt;here&lt;/a&gt;). I am extremely excited for the trip to Google Headquarters. I will attempt to continue contributing to FOSSASIA, but it is difficult due to time restraints with school and other activities. Once again, I thank all the people involved with helping me to build my knowledge and ultimately win the grand prize.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>My Google Code-in Experience with FOSSASIA</title>
@@ -41,7 +51,7 @@
 
 &lt;p&gt;&lt;img src=&#34;../gci/prwatch.png&#34; alt=&#34;prwatch&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I did not know anything about the GitHub API or webhooks before this task; I did not know GitHub offered so many management tools to take control of the project. I have learned GitHub at my school before, but I usually commit to my own repository so there were no merge conflicts or other issues to deal with. This experience gave me the taste of what open source collaboration is like with Git (and also the annoyances of merge conflicts). I got a chance to put the objectives I learned in school into use in real world applications and to extend my knowledge of Git further.&lt;/p&gt;
+&lt;p&gt;I did not know anything about the GitHub API or webhooks before this task; I did not know GitHub offered so many management tools to take control of the project. Though my previous knowledge of GitHub was a huge help to me, there were no merge conflicts or other issues to deal with. This experience gave me the taste of what open source collaboration is like with Git (and also the annoyances of merge conflicts). I got a chance to put the objectives I learned in school into use in real world applications and to extend my knowledge of Git further.&lt;/p&gt;
 
 &lt;p&gt;I also contributed to the &lt;a href=&#34;github.com/fossasia/gci15.fossasia.org&#34;&gt;GCI Student Site&lt;/a&gt; by replacing the twitter widget with a loklak implementation, improving the blog section dramatically, adding the loklak peers and footer section, and doing a lot of other contributions to improve the overall user experience. Special thanks to &lt;strong&gt;&lt;a href=&#34;https://github.com/mariobehling&#34;&gt;Mario Behling&lt;/a&gt;, &lt;a href=&#34;https://github.com/jig08&#34;&gt;Jigyasa Grover&lt;/a&gt;, &lt;a href=&#34;https://github.com/roonyh&#34;&gt;Aruna Herath&lt;/a&gt;, &lt;a href=&#34;https://github.com/sudheesh001&#34;&gt;Sudheesh Singanamalla&lt;/a&gt;, &lt;a href=&#34;https://github.com/mananwason&#34;&gt;Manan Wason&lt;/a&gt;&lt;/strong&gt;, and &lt;a href=&#34;https://github.com/nikunjness&#34;&gt;Nikunj Thakkar&lt;/a&gt; for working with me on the GCI site and other side projects. I implemented Loklak&amp;rsquo;s search API on the 2015 and 2016 FOSSASIA event sites as well as on &lt;a href=&#34;http://fossasia.org&#34;&gt;fossasia.org&lt;/a&gt;. I helped others with issues on GitHub and also invited a few of my friends to join GCI with FOSSASIA (i.e. aristochaotic, scorpianz1525). I was also involved with contributing to loklak_webclient, showing tutorials on how to setup Loklak, and implementing it on all of the FOSSASIA event sites and the FOSSASIA GCI student site with the mentors listed above and &lt;strong&gt;&lt;a href=&#34;https://github.com/orbiter&#34;&gt;Orbiter&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 
