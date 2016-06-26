@@ -32,4 +32,6 @@ Wednesday was the day of the official Google Code-in trip. Today, the last Googl
 
 <img src="../trip/breakfast.JPG" alt="Breakfast" width=250>
 <img src="../trip/talk.JPG" alt="Talk" width=250>
-<img src="../trip/jen.JPG" alt="Magnet Googler Jen" width=250>
+<img src="../trip/jen.JPG" alt="Magnet Googler Jen" width=250>  
+
+Click [here](https://goo.gl/photos/htCKY4yJooX9ZSNBA) for the link for the shared photo album.  
